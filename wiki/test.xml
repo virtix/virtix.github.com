@@ -1,0 +1,14 @@
+<?xml version='1.0' ?><!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book>
+	<title>test</title>
+	<chapter id="overview">
+		<title>overview</title>
+		<section id="aheadinglevel2">
+			<title>a heading level 2</title>
+			<para>some other wiki text</para>
+			<para>
+				<code>some code</code> 
+			</para>
+		</section>
+	</chapter>
+</book>

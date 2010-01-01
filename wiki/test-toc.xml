@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="wiki/test.html" label="test">
+	<topic href="wiki/test.html" label="overview">
+		<topic href="wiki/test.html#aheadinglevel2" label="a heading level 2"></topic>
+	</topic>
+</toc>
