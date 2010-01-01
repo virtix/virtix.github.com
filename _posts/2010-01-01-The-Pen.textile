@@ -1,0 +1,13 @@
+---
+layout: post
+title: 2010 Writing - The Pen is Mightier than the Sword
+---
+
+h1. {{ page.title }}
+
+p(meta). 1 January, 2010 - Alexandria, VA
+
+Ok ... writing like a fool ... 2010 will be the *Year of The Pen*
+
+!http://justwilliam1959.files.wordpress.com/2009/02/beatles_live.jpg!
+
