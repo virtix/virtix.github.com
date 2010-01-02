@@ -30,13 +30,9 @@
     <div class="contact">
       billshelton@comcast.net
   </div>
- </div>
+</div>
 
-<p style="font-size:12px;color:silver">
-Blog template provided by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>, developer of <a href="http://github.com/mojombo/jekyll/">Jekyll</a>
-</p>
-
-
+<a href="http://github.com/virtix"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
 
 <script type="text/javascript">
 //google analytics here ...
