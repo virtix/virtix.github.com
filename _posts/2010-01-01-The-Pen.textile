@@ -15,5 +15,5 @@ I'm particularly excited about Goodcoders. It's an opportunity to make a differe
 
 A brand new project begs lots of questions. From a technical perspective, what technologies should be used? Of course I could go with that which I know, or, I could venture into something less familiar. I'll probably opt for the latter and expand horizons. Honestly, though, I'm a bit torn. I'd like to do something in both Ruby and Python and compare the two. Likewise, going with Groovy or Lift/Scala would be cool, too. Regardless, it will be all be good.  
 
-Interested in helping to make Goodcoders.org a reality? "Drop me a note!":url:mailto:billshelton@comcast.net
+Interested in helping to make Goodcoders.org a reality? "Drop me a note!":mailto:billshelton@comcast.net
 
