@@ -6,6 +6,10 @@
 
 /* Global Reset */
 
+img{
+	padding:2em;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -7,11 +7,13 @@ h1. {{ page.title }}
 
 p(meta). 1 January, 2010 - Alexandria, VA
 
-2010 will be the *Year of The Pen* and a new birth of making a difference.
+2010 will be the _Year of The Pen_ and a new birth of making a difference.
 
 Aside from active blogging, "old skool" pen and paper writing, launching "Goodcoders.org":http://goodcoders.org is at the top of the list. 
 
-I'm particularly excited about Goodcoders. It's an opportunity to make a difference and not just make a buck. The goal of this project is to connect developers (both experienced and student) with projects needing technical help. Many developers want to expand their experience and are in search of projects to learn new skills. Likewise, the aspiring developer with less experience also needs projects. There's an assumption, I think, that non-profit organizations and benevolent efforts need to pay for professional services. This may be true to a certain extent, but there's also an opportunity to streamline and take advantage of developer's desire for recognition and need to constantly grow skills. Many developers, myself included, frequently turn to open-source projects or developer communities to develop and hone skills. To complement and implement these new technologies, Goodcoders will provide real-world projects with a venue for fulfilling their goals by connecting people in need with people willing to give. We'll also create a project incubator where people can collaborate and grow new ideas together.   
+!</images/boy-offering-apple.jpg!
+
+I'm particularly excited about Goodcoders. It's an opportunity to make a difference and not just make a buck. The goal of this project is to connect developers (both experienced and student) with non-profit projects needing technical help. Many developers want to expand their experience and are in search of projects to learn new skills. Likewise, the aspiring developer with less experience also needs projects. There's an assumption, I think, that non-profit organizations and benevolent efforts need to pay for professional services. This may be true to a certain extent, but there's also an opportunity to streamline and take advantage of developer's desire for recognition and need to constantly grow skills. Many developers, myself included, frequently turn to open-source projects or developer communities to develop and hone skills. To complement and implement these new technologies, Goodcoders will provide real-world projects with a venue for fulfilling their goals by connecting people in need with people willing to give. We'll also create a project incubator where people can collaborate and grow new ideas together.   
 
 A brand new project begs lots of questions. From a technical perspective, what technologies should be used? Of course I could go with that which I know, or, I could venture into something less familiar. I'll probably opt for the latter and expand horizons. Honestly, though, I'm a bit torn. I'd like to do something in both Ruby and Python and compare the two. Likewise, going with Groovy or Lift/Scala would be cool, too. Regardless, it will be all be good.  
 
