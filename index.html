@@ -9,10 +9,8 @@ title: goodcoder
    'profession' : 'programmer',
    'real_name' : 'bill shelton',
    'posts' : [
-		{% for post in site.posts %}
-			{'title' : '<a href="{{ post.url }}">{{ post.title }}</a>', 'date' : '{{ post.date | date_to_string }}',
-		{% endfor %}
-		],
+		{% for post in site.posts %}{'title' : '<a href="{{ post.url }}">{{ post.title }}</a>', 'date' : '{{ post.date | date_to_string }}',{% endfor %}
+	],
    'home' : {
      'city' : 'alexandria'
      'state' : 'va'
