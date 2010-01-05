@@ -6,6 +6,7 @@
    <meta name="author" content="Bill Shelton" />
    
    	<script type="text/javascript" src="/resources/syntax/scripts/shCore.js"></script>
+	<!--
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushBash.js"></script>
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushCpp.js"></script>
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushCSharp.js"></script>
@@ -23,6 +24,7 @@
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushSql.js"></script>
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushVb.js"></script>
 	<script type="text/javascript" src="/resources/syntax/scripts/shBrushXml.js"></script>
+	-->
 	<link type="text/css" rel="stylesheet" href="/resources/syntax/styles/shCore.css"/>
 	<link type="text/css" rel="stylesheet" href="/resources/syntax/styles/shThemeDefault.css"/>
 	<script type="text/javascript">
@@ -53,15 +55,13 @@
 </head>
 
 <body>
-<div style="float:left;height:100%;position:relative;margin-top:3.5em" class="avatar">
-  <a href="http://github.com/virtix" title="Github Info"><img border="0" src="/images/billy_south_pk_avatar.png" alt="Contact me ..."></a>
+<div style="float:left;height:100%;position:relative;" class="avatar">
+  <img border="0" src="/images/billy_south_pk_avatar.png" title="Contact me ..." style="float:left;cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
+  <a class="extra" href="/" style="color:gray;text-align:left;">home</a>
 </div>
-  
+
 <div class="site">
-  <div class="title">
-    <a class="extra" href="/">home</a>
-  </div>
-  
+ 
   {{ content }}
   
   <div class="footer">
