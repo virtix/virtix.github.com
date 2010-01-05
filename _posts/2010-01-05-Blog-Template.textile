@@ -1,0 +1,55 @@
+---
+layout: default
+title: Blog Template - Ignore Me
+published: false	
+---
+
+h3. Basic Template 
+
+h2. SyntaxHihglighter Test
+
+This is a test file to insure that everything is working well.
+
+<pre class="brush: java;">
+function test() : String
+{
+	return 10;
+}
+</pre>
+
+h4. dash
+
+Observe -- how I can dash 
+
+Observe how I can elipse ...
+
+h4. more .pre stuff
+
+pre. some text
+
+pre(java). public class Foo {
+  ...
+}
+
+h4. let's look again at Pygments
+
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+
+
+h4. h4 ...
+  
+@asdasdasdasdasdasd@   
+@here's a line of code@
+
+h4. using span class
+
+%{brush: java}public class Foo% 
+
+
+
+
+   

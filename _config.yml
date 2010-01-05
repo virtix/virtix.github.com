@@ -5,9 +5,3 @@ server_port: 4000
 pygments:    true
 markdown:    rdiscount
 permalink:   date
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_dir:    /images/
-  png_url:    /images/
-
