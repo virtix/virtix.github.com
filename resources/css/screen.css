@@ -10,6 +10,22 @@ img{
 	padding:2em;
 }
 
+a>img{
+	text-decoration:none;
+}
+
+a:link,a:visited{
+	color: navy;
+	text-decoration:none;
+	
+}
+
+a:hover {
+	color:navy;
+	text-decoration:none;
+	border-bottom:.15em dotted;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +36,7 @@ html, body {
 }
 
 body {
-  background-color: white;
+  background-color: #ffffff;
   font: 13.34px helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
@@ -38,17 +54,6 @@ p {
   margin: 1em 0;
 }
 
-a {
-  color: #00a;
-}
-
-a:hover {
-  color: black;
-}
-
-a:visited {
-  color: #a0a;
-}
 
 table {
   font-size: inherit;
