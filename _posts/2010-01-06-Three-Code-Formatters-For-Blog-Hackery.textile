@@ -17,13 +17,13 @@ My goal in developing a technial blog tool/platform is that I want to be able to
 
 That's a bit of a digression, but related ... Anyway, below are some examples and my thoughts.
 
-h3. gist example -- syntax gist.github.com/[gist_id].js
+h3. Github Gists
 
 <script src="http://gist.github.com/135149.js"></script>
 
 It's nice to be able to have your snippets hosted, and visitors and use the gists; however, you need to drop out of the editor to create it.
 
-h3. Pygments (HTML)
+h3. Pygments via Jekyll
 
 {% highlight html  %}
 <cffunction name="computeHash" access="public" returntype="String">
@@ -44,7 +44,7 @@ h3. Pygments (HTML)
 
 Pygments generates static HTML, so, it's fast and my blog post is not dependent upon an external resource. Pygments and Jekyll don't generate that nice copy-paste widget.
 
-h3. Older Syntax Highlighter
+h3. Older SyntaxHighlighter (1.5)
 
 <pre class="cf" name="code">
   <cffunction name="computeHash" access="public" returntype="String">
@@ -64,6 +64,7 @@ h3. Older Syntax Highlighter
 </cffunction>
 </pre>
 
-  My personal favorite. This looks great and has nice features that allow viewers to get the code. Also, I don't have to drop out of the editor to create a code snippet.
+  My personal favorite. This looks great and has nice features that allow viewers to get the code. Also, I don't have to drop out of the editor to create a code snippet. The newer version of "SyntaxHighlighter":http://alexgorbatchev.com/wiki/SyntaxHighlighter doesn't work with RedCloth, which doesn't allow colon's in the class statement:
+  @pre(brush: ruby)@. The good news, is that this looks like a trivial change to RedCloth.
 
 Bottom line, when writing about code, I'd like to stay as close to the cods as possible. For me, this means that using the editor I normally use to build software--Eclipse--is the ideal tool for writing about that which I build. 
