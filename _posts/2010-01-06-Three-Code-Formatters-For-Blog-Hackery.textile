@@ -1,0 +1,69 @@
+---
+layout: post
+title: Three Code Formatters For Blog Hackery
+author: bill shelton
+---
+
+h1. {{ page.title }}
+
+p(meta). 6 January, 2010 - Alexandria, VA, by {{page.author}}
+
+In my what seems to be never ending quest for a platform for technical blogging, I'm throwing out 3 different code formatters I've used:
+1. Github Gists (hosted Pygments)
+2. Pygments via Jekyll
+3. Syntax Highlighter (JavaScript)
+
+My goal in developing a technial blog tool/platform is that I want to be able to write and publish a blog using the same tool I use to code. That way, I can add code snippets easily, and use something familiar. I need something that doesn't get in the way. So far, I'm really liking the "WikiText Eclipse Plugin":http://wiki.eclipse.org/Mylyn/Incubator/WikiText, and "Jekyll":http://wiki.github.com/mojombo/jekyll. It's giving me most of what I need today, and is much better than blogger.
+
+That's a bit of a digression, but related ... Anyway, below are some examples and my thoughts.
+
+h3. gist example -- syntax gist.github.com/[gist_id].js
+
+<script src="http://gist.github.com/135149.js"></script>
+
+It's nice to be able to have your snippets hosted, and visitors and use the gists; however, you need to drop out of the editor to create it.
+
+h3. Pygments (HTML)
+
+{% highlight html  %}
+<cffunction name="computeHash" access="public" returntype="String">
+  <cfargument name="password" type="string" />
+  <cfargument name="salt" type="string" />
+  <cfargument name="iterations" type="numeric" required="false" default="1024" />
+  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
+  <cfscript>
+    var hashed = '';
+    var i = 1;
+    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
+    for (i = 1; i <= iterations; i++) {
+      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
+    }
+    return hashed;
+  </cfscript>
+</cffunction>{% endhighlight %}
+
+Pygments generates static HTML, so, it's fast and my blog post is not dependent upon an external resource. Pygments and Jekyll don't generate that nice copy-paste widget.
+
+h3. Older Syntax Highlighter
+
+<pre class="cf" name="code">
+  <cffunction name="computeHash" access="public" returntype="String">
+  <cfargument name="password" type="string" />
+  <cfargument name="salt" type="string" />
+  <cfargument name="iterations" type="numeric" required="false" default="1024" />
+  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
+  <cfscript>
+    var hashed = '';
+    var i = 1;
+    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
+    for (i = 1; i <= iterations; i++) {
+      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
+    }
+    return hashed;
+  </cfscript>
+</cffunction>
+</pre>
+
+  My personal favorite. This looks great and has nice features that allow viewers to get the code. Also, I don't have to drop out of the editor to create a code snippet.
+
+Bottom line, when writing about code, I'd like to stay as close to the cods as possible. For me, this means that using the editor I normally use to build software--Eclipse--is the ideal tool for writing about that which I build. 

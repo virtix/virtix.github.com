@@ -1,55 +1,57 @@
 ---
-layout: default
-title: Blog Template - Ignore Me
-published: false	
+layout: post
+title: Template
+author: bill shelton
+published: false
 ---
 
-h3. Basic Template 
+h1. {{ page.title }}
 
-h2. SyntaxHihglighter Test
+p(meta). 4 January, 2010 - Alexandria, VA, by {{page.author}}
 
-This is a test file to insure that everything is working well.
+h2. Some Code examples
 
-<pre class="brush: java;">
-function test() : String
-{
-	return 10;
-}
+h3. gist example -- syntax gist.github.com/[gist_id].js
+
+<script src="http://gist.github.com/135149.js"></script>
+
+h3. Pygments (HTML)
+
+{% highlight html  %}
+<cffunction name="computeHash" access="public" returntype="String">
+  <cfargument name="password" type="string" />
+  <cfargument name="salt" type="string" />
+  <cfargument name="iterations" type="numeric" required="false" default="1024" />
+  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
+  <cfscript>
+    var hashed = '';
+    var i = 1;
+    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
+    for (i = 1; i <= iterations; i++) {
+      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
+    }
+    return hashed;
+  </cfscript>
+</cffunction>{% endhighlight %}
+
+h3. Older Syntax Highlighter
+
+<pre class="cf" name="code">
+  <cffunction name="computeHash" access="public" returntype="String">
+  <cfargument name="password" type="string" />
+  <cfargument name="salt" type="string" />
+  <cfargument name="iterations" type="numeric" required="false" default="1024" />
+  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
+  <cfscript>
+    var hashed = '';
+    var i = 1;
+    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
+    for (i = 1; i <= iterations; i++) {
+      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
+    }
+    return hashed;
+  </cfscript>
+</cffunction>
 </pre>
-
-h4. dash
-
-Observe -- how I can dash 
-
-Observe how I can elipse ...
-
-h4. more .pre stuff
-
-pre. some text
-
-pre(java). public class Foo {
-  ...
-}
-
-h4. let's look again at Pygments
-
-{% highlight ruby linenos %}
-def foo
-  puts 'foo'
-end
-{% endhighlight %}
-
-
-h4. h4 ...
-  
-@asdasdasdasdasdasd@   
-@here's a line of code@
-
-h4. using span class
-
-%{brush: java}public class Foo% 
-
-
-
 
    
