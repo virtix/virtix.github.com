@@ -44,9 +44,9 @@ h3. Pygments via Jekyll
 
 Pygments generates static HTML, so, it's fast and my blog post is not dependent upon an external resource. Pygments and Jekyll don't generate that nice copy-paste widget.
 
-h3. Older SyntaxHighlighter (1.5)
+h3. SyntaxHighlighter (2.0)
 
-<pre class="cf" name="code">
+<pre class="brush: cf;">
   <cffunction name="computeHash" access="public" returntype="String">
   <cfargument name="password" type="string" />
   <cfargument name="salt" type="string" />
