@@ -11,12 +11,12 @@
 	.dp-highlighter .tools a { color: #000; text-decoration: underline; }
 	.dp-highlighter .tools a:hover { margin-right: 10px; }
 	</style>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shCore.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushColdFusion.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushXML.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushJava.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushJScript.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushRuby.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shCore.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushColdFusion.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushXML.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushJava.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushJScript.js'></script>
+<script language='javascript' src='http://mxunit.org/doc/tutorial/dp.SyntaxHighlighter/scripts/shBrushRuby.js'></script>
 
 <script language='javascript'>
 	window.onload = function () {
@@ -68,6 +68,13 @@
 <p style="font-size:12px;color:silver">
 Built on <a href="http://github.com/mojombo/jekyll/">Jekyll</a> by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.
 </p>
+
+
+
+
+<script type="text/javascript">
+//google analytics here ...
+</script>
 
 </body>
 </html>
