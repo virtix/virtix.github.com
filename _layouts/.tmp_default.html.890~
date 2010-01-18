@@ -15,7 +15,6 @@
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushJava.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushJScript.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushRuby.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushPython.js'></script>
 
 <script type="text/javascript">
 	SyntaxHighlighter.config.clipboardSwf = 'http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/clipboard.swf';
@@ -59,11 +58,7 @@
   {{ content }}
   
   <div class="footer">
-
   </div>
-
-
-<a href="atom.xml"><img src="/images/rss.png" style="float:right;border-style:none;"></a>
 
 <p style="font-size:12px;color:silver">
 Built on <a href="http://github.com/mojombo/jekyll/">Jekyll</a> by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.

@@ -8,7 +8,7 @@ published: true
 
 h1. {{ page.title }}
 
-p(meta). 17 January, 2010 - Alexandria, VA, by {{page.author}}
+p(meta). 18 January, 2010 - Alexandria, VA, by {{page.author}}
 
 h2. I "am" plugging "this book":http://www.amazon.com/Introduction-Software-Testing-Paul-Ammann/dp/0521880386/ref=dp_return_1?ie=UTF8&n=283155&s=books, and for good reason ...
 
@@ -24,7 +24,7 @@ One of the goals of the book is to strike a balance between theory and practice.
 
 Now some 4+ years after receiving a masters, I'm going back to school and the first class I'm taking is "SWE-637":http://cs.gmu.edu/~pammann/637.html, _Software Testing_, the class I missed on the first go-around. I'm exited to dig deep, however, having a full-time job and being a parent drives me to try to work as smart as possible (that's a constant learning process).  Adding a graduate software engineering program to that, makes for very little time for anything other than that which absolutely necessary. With that, my goal for this semester is to focus on _automated test design_&mdash;how best to design automated tests in order to cover as many requirement criteria as possible in the least amount of space and time. I'd like to use functional testing as the primary medium and (as a bonus) develop a good grasp of the upcoming 2.0 version of Selenium (with Webdriver) as the test harness.  But the focus will be on the principals of good test design rather than the tools.
 
-_Coverage criteria_ and test design is largely what the course and the book address. After focusing on TDD, unit testing, and building a testing tool, I still have the unanswered question of "what makes a test a good test?". And how can I measure how much of component, system, object, etc., is adequately covered by my tests? I know that when I write a lot of tests and take the time to reason about what I'm doing, I know the quality of my software is better. Yet still, there's that lingering question that tests can't show the absense of bugs ... 
+_Coverage criteria_ and test design is largely what the course and the book address. After focusing on TDD, unit testing, and building a testing tool, I still have the unanswered question of "what makes a test a good test?". And how can I measure how much of a class, component, system, object, etc., is _adequately_ covered by my tests? I know that when I write a lot of tests and take the time to reason about what I'm doing, I know the quality of my software is better. I know, too, coverage tools can let me know what parts of my code have not been exercised. Yet still, there's that lingering question that tests can't show the absence of defects ... 
 
 
 <p>&nbsp;</p>
