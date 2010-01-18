@@ -5,11 +5,11 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Goodcoder Blog (bill shelton)</title>
+ <title>Goodcoder</title>
  <link href="http://blog.billshelton.me/atom.xml" rel="self"/>
  <link href="http://blog.billshelton.me/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://tom.preston-werner.com/</id>
+ <id>http://blog.billshelton.me/</id>
  <author>
    <name>bill shelton</name>
    <email>billshelton@comcast.net</email>
@@ -18,7 +18,7 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://tom.preston-werner.com{{ post.url }}"/>
+   <link href="http://blog.billshelton.me{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://blog.billshelton.me{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
