@@ -3,8 +3,13 @@ layout: post
 title: Software Testing
 author: bill shelton
 published: true
+tags:
+- personal
+- testing
+- gmu
 ---
 
+Tags: {{ page.tags | array_to_sentence_string }} 
 
 h1. {{ page.title }}
 
@@ -16,9 +21,9 @@ h2. I "am" plugging "this book":http://www.amazon.com/Introduction-Software-Test
 
 Admittedly, I am a bit biased, being both a student of the authors and a QA geek. To create even further bias, even though I  bought a copy of the book for over a year ago, I never thoroughly read the preface until yesterday. I was both surprised and flattered to read my name in print, acknowledged as one of the students who contributed and helped with the book.  I recall reading and commenting on the text before it was published and then being disappointed that I couldn't attend the class before I graduated&mdash;it was a new course then and I had some graduation requirements to fulfill. 
 
-Coming from someone who contributes to the core MXUnit test framework, written a few blogs posts, and spoken at conferences on testing and TDD, the book's title may be construed as misleading. It _can_ be used as an introductory text, but also presents practical, novel, and advanced concepts, such as coverage criteria (graph and logic coverage, input space partitioning, and syntax-based testing ).  I suspect one of the main reason's for the title is to make it accessible at many levels&mdash;and this is a big asset. _Introduction to Software Testing_ can be used both as a text and as a test engineer or developer's reference. 
+Coming from someone who contributes to the core MXUnit test framework, written a few blog posts, and spoken at conferences on testing and TDD, the book's title may be construed as misleading. It _can_ be used as an introductory text, but also presents practical, novel, and advanced concepts, such as coverage criteria (graph and logic coverage, input space partitioning, and syntax-based testing ).  I suspect one of the main reason's for the title is to make it accessible at many levels&mdash;and this is a big asset. _Introduction to Software Testing_ can be used both as a text and as a test engineer or developer's reference. 
 
-One of the goals of the book is to strike a balance between theory and practice. The book's introduction establishes the context of testing in software engineering from a more formal process point of view. (It might be helpful or more accessible if the book were to also mention Agile methods, too, in which testing _is_ an integral part of the process.) The book also identifies the fundamental weakness we all have to deal with in respect to testing&mdash;_Testing can shows the presence of failures, not their absense_. This key point applies to both manual and automated testing and at all levels, unit through acceptance. In other words, based on your tests, you can't prove that that your code does *not* have bugs. This is one of the main problems the book addresses through exploration of coverage criteria. Through coverage criteria, is it possible to describe and possibly measure the relative quality of your application? ...
+One of the goals of the book is to strike a balance between theory and practice. The book's introduction establishes the context of testing in software engineering from a more formal process point of view. (It might be helpful or more accessible if the book were to also mention Agile methods, too, in which testing _is_ an integral part of the process.) The book also identifies the fundamental weakness we all have to deal with in respect to testing&mdash;_Testing can show the presence of failures, not their absence_. This key point applies to both manual and automated testing and at all levels, unit through acceptance. In other words, based on your tests, you can't prove that that your code does *not* have bugs. This is one of the main problems the book addresses through exploration of coverage criteria. Through coverage criteria, is it possible to describe and possibly measure the relative quality of your application? ...
 
 !>/images/back_to_school.jpg! 
 
