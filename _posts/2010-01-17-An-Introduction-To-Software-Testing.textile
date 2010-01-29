@@ -15,7 +15,9 @@ h1. {{ page.title }}
 
 p(meta). 18 January, 2010 - Alexandria, VA, by {{page.author}}
 
-h2. I "am" plugging "this book":http://www.amazon.com/Introduction-Software-Testing-Paul-Ammann/dp/0521880386/ref=dp_return_1?ie=UTF8&n=283155&s=books, and for good reason ...
+h2. I "am" plugging "this book":http://books.google.com/books?id=leokXF8pLY0C&lpg=PP1&dq=an%20introduction%20to%20software%20testing&pg=PP1#v=onepage&q=&f=false, and for good reason ...
+
+The authors (Paul Ammann and Jeff Offutt) donate 100% of the book's royalties to the "Software Engineering Scholarship Fund":http://volgenau.gmu.edu/corporate_community_partners/introduction_to_giving.php, a scholarship fund for software engineering students.
 
 !</images/intro_testing_cover.jpg!:http://www.amazon.com/Introduction-Software-Testing-Paul-Ammann/dp/0521880386/ref=dp_return_1?ie=UTF8&n=283155&s=books  <br/>
 
