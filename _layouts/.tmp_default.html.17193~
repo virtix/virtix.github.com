@@ -11,7 +11,7 @@
 	
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shCore.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushColdFusion.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushXml.js'></script>
+<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushXML.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushJava.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushJScript.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushRuby.js'></script>
@@ -50,7 +50,7 @@
 <body>
 	
 <div style="float:left;height:100%;position:relative;" class="avatar">
-  <img id="me" border="0" src="{{ site.images }}/billy_south_pk_avatar.png" title="Contact me through Github." style="float:left;cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
+  <img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="float:left;cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
   <a class="extra" href="/" style="color:gray;text-align:left;">home</a>
 </div>
 
@@ -63,7 +63,7 @@
   </div>
 
 
-<a href="http://feeds.feedburner.com/goodcoder"><img src="{{ site.images }}/rss.png" style="float:right;border-style:none;"></a>
+<a href="http://feeds.feedburner.com/goodcoder"><img src="/images/rss.png" style="float:right;border-style:none;"></a>
 
 <p style="font-size:12px;color:silver">
 Built on <a href="http://github.com/mojombo/jekyll/">Jekyll</a> by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.

@@ -5,3 +5,5 @@ server_port: 4000
 pygments:    true
 markdown:    rdiscount
 permalink:   date
+images:    http://i905.photobucket.com/albums/ac259/virtix
+sp:    <p>&nbsp;</p>

@@ -9,6 +9,12 @@ h1. {{ page.title }}
 
 p(meta). 4 January, 2010 - Alexandria, VA, by {{page.author}}
 
+h2. Sample Images
+
+Note url syntax
+!{{site.images}}/gears.jpg!
+
+
 h2. Some Code examples
 
 h3. gist example -- syntax gist.github.com/[gist_id].js
@@ -34,9 +40,9 @@ h3. Pygments (HTML)
   </cfscript>
 </cffunction>{% endhighlight %}
 
-h3. Older Syntax Highlighter
+h3. Syntax Highlighter
 
-<pre class="cf" name="code">
+<pre class="brush: cf;">
   <cffunction name="computeHash" access="public" returntype="String">
   <cfargument name="password" type="string" />
   <cfargument name="salt" type="string" />
