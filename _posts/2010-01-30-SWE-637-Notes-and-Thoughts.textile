@@ -5,6 +5,8 @@ author: bill shelton
 published: true
 ---
 
+
+
 h1. {{ page.title }}  ::DRAFT::
 
 p(meta). 30 January, 2010 - Alexandria, VA, by {{page.author}}
@@ -18,7 +20,7 @@ Attending school forces me into a different mind-set, requiring me to slow down 
 
 Ok, enough about me ...
 
-So, in the most recent class (#2), we discussed a single software fault in painstaking detail. It was dissection, the main concepts being _observability_ and it's antithesis.  
+So, in the most recent class (#2), we discussed a single software fault in painstaking detail. It was dissection, the main concepts being _observability_ and it's antithesis.  These are my notes, but with some reflection and practice.
 
 
 <p>&nbsp;</p>
@@ -126,7 +128,9 @@ Expected State    		Actual State
  PC =  if( x[i]==y )       	return -1;     
 </pre>
 
-In simple terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  Of course, in practice you would never go into this much detail about such a mistake. This is, for me, taking an opportunity to think about bugs, or software faults, in abstract terms. Which, is not aonly a great exercise, but, a useful and practical way to reason about the complexities of building software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
+In simple terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  
+
+Chances are, in practice, you would never go into this much detail about such a small fault. This is, for me, taking an opportunity to think about bugs, or software faults, in abstract terms. Which, is not only a great exercise, but, a useful and practical way to reason about the complexities of building software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
 
 Next up. (And I'm totally geeking out over this!) Coverage Criteria.
 
