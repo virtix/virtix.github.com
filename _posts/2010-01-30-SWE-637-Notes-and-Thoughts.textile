@@ -95,8 +95,8 @@ In the RIP model in order for the fault to be observable, it needs to satisfy al
 
 | The questions to ask are (and these are loosely taken from "the book":http://books.google.com/books?id=leokXF8pLY0C&dq=introduction+to+software+testing&printsec=frontcover&source=bn&hl=en&ei=WVFjS-SfK8PklAehjYm0Aw&sa=X&oi=book_result&ct=result&resnum=4&ved=0CBsQ6AEwAw#v=onepage&q=&f=false) :
  * in which case(s) would the fault _not_ execute?
- * in which case(s) would the fault execute yet _not_ create and error state?
- * in which case(s) would the fault execute and create and error state, but not propagate?
+ * in which case(s) would the fault execute yet _not_ create an error state?
+ * in which case(s) would the fault execute and create an error state, but not propagate?
  * in which case(s) would the inputs cause execution of the of the fault, cause an error state, and propagate? 
   | !>{{site.images}}/Brain_1.jpg! |
 
