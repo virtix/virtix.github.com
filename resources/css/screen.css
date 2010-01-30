@@ -43,11 +43,13 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h2, h3, h4, h5, h6 {
   font-size: 100%;
 }
 
 h1 {
+  font-size:large;
+  color:#50515c;
   margin-bottom: 1em;
 }
 
