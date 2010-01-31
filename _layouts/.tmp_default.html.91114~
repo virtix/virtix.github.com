@@ -4,7 +4,6 @@
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title>{{ page.title }}</title>
    <meta name="author" content="Bill Shelton" />
-   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAABx0lEQVQ4y42SPWhTYRiFn/feirUihZKqsRAJaFT8wyDN0KEdHBQVipNubgp2sbgKLbi5Cbo4iM51MVFanRzEv4g4RGhQQduaCrVEG2xJ7v2OQ5tAehvjGb9zvsN5D8dogR0922VmmBmlhXlrpYsQ8dhOAUirVN3EuQDwMIPSQqnxryPiaMZc/gGuWmVi6jXZZ2+4f3MEzEgMXGqfYPjEkB7eHkXmYb6BWyMU4pxIDo4w+2Om8c9bbzBx5xrlygo/yxUUOpCjWgv4/H0BzKN7W1eT3l9v8P7D9Ni+3s0sKca30hLnLo9x7HCaP8swU8gTTyaYfP52vGWCu7cugiAIAszgUfZG08FXLpxs0kcMercm8buriJDj/SniQSfyFlGtQmZogE37zzb1FikxKOZkgJMDDM8zhMAZGHSkzrTcRANhMadgOqtUYrcy6Yzcp8cKizn915BWRxSqVpzCNwcIYfh7T9d38u8Ei1/eSQolhQorc/r18Ynq+F1ejKSIlNi1Mrv2LF68KlAYvdfglr++pK2B79en4ZObfEr++tUG17NlwxqiKJXmtRGOHB1sfwLArr4+zMwOpIcxM9tz6BQH+8/TGUtHtH8B+PPMk6TyxcQAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
    
 <link type="text/css" rel="stylesheet" href="http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/styles/shCore.css"/>
 <link type="text/css" rel="stylesheet" href="http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/styles/shThemeDefault.css"/>

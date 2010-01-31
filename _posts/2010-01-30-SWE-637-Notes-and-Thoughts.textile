@@ -39,7 +39,7 @@ This model articulates three abstract properties that must exist in a program ex
 
 * *Reachability* - the fault in the code has to be reachable
 * *Infection* - the fault has to put the program into an error state. This does _not_ necessarily mean the program will return incorrect results&mdash;this is an important distinction! Just because a program is in an error state does not mean that it will _always_ produce the wrong result. _see below_ 
-* *Propagation* - the program needs to exhibit incorrect behavior; e.g., incorrect outputs or behavior; e.g., throwing an unspecified exception
+* *Propagation* - the program needs to exhibit incorrect behavior; e.g., incorrect outputs or behavior or throwing an unspecified exception
 
 A program can exhibit zero, one, or two of these properties, but in order for it to be _observable_ *all* these criteria need to be met.
 
@@ -88,7 +88,7 @@ public void testLastIndexOf(){
 
 <p></p>
 
-The bug isn't too hard to find simply by looking closely at the code. But if this were buried in some stacktrace it would be much harder to locate&mdash;here we already know where it is, within a few lines of code. In the real world, we would simple change the @>@ to @>=@, pat ourselves on the back for swatting the fly, and go grab some Fritoes.  But with a more rigorous academic approach, we have an opportunity to explore some more concepts&mdash;_state_ and what makes this particular defect observable or not. Just to be clear the fault in the code above is the usage of the @>@ operator. 
+The bug isn't too hard to find simply by looking closely at the code. But if this were buried in some stacktrace it would be much harder to locate&mdash;here we already know where it is, within a few lines of code. In the real world, we would simple change the @>@ to @>=@, pat ourselves on the back for swatting the fly, and go grab some Fritoes.  But with a slightly more rigorous approach, we have an opportunity to explore some interesting and useful concepts&mdash;_state_ and what makes this particular defect observable or not. To be clear, the fault in the code above is the usage of the @>@ operator. 
 
 The RIP model states that in order for the fault to be observable, it needs to satisfy all three criteria&mdash;Reachability, Infection, and Propagation. It's also helpful to show cases (test cases) where the fault is _not_ observable, yet puts the program in an error state. How can a program be in an error state and not output an error? These are the kinds of bugs many of us have wrestled with&mdash;the kind of bug that gnashes its sharp mandibles only under certain circumstances. 
 
@@ -112,7 +112,7 @@ bq.  S ~0~ -> S ~1~ -> S ~2~ -> S ~3~  -> S ~4~  -> S ~5~  , where S ~n~ represe
  
 But, sometimes the program _skips_ a state and goes from S ~3~  -> S ~5~ . This is the _error state_. If a some code is supposed to execute some line and it does not, that's skipping an intended state.
 
-In S ~0~ we're entering the above method and we have the values of x and y. In S ~1~ we're now at @for(int i = x.length-1; ...)@ and for our state we now have a value for @i@.	What if we have a single element array; e.g., x = [ 1 ] ? Because it's only one element, this gives @i@ the value of 0, so the bug @i > 0@ kicks us out of the for loop, pushes us down to the return statement, and then returns the correct result, -1. The *error state*, and this is the take-home, is the fact the PC never reaches the @if( x[i] == y )@ statement. 
+In S ~0~ we're entering the @lastIndexOf(...)@ method and we have values for inputs @x@ and @y@. In S ~1~ we're now at @for(int i = x.length-1; ...)@ and  our state now has some value for @i@. 	What if we have a single element array; e.g., @x = [ 1 ]@  instead? Because it's only one element, this gives @i@ the value of 0, so the bug @i > 0@ kicks us out of the for loop, pushes us down to the return statement, and then returns the correct result, -1. The *error state*&mdash;and this is the take-home&mdash;is the fact the PC _never_ reaches the @if( x[i] == y )@ statement. 
 
 An analysis of the state of the program when the error state was entered can be presented like this:
 
@@ -126,7 +126,17 @@ Expected State    		Actual State
  PC =  if( x[i]==y )       	PC = return -1;     <--error state
 </pre>
 
-In more concrete terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  
+In more concrete terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  In RIP terms this is saying that Reachability was satisfied, Infection was also satisfied (an error state occurred), but Propagation did not occur. So, this software fault is not observable. Again, this is the kind of bug that, usually buried deep in some system, that causes us pain. It's very difficult to find after the fact, but a simple unit test up front would catch it.
+
+Today, one test I would write would be make sure that the @y@ was present in every possible index of the array being searched:
+
+bc. Testcases:
+x = [2,3,4,5]
+x = [3,2,4,5]
+x = [3,4,2,5]
+x = [3,4,5,2]
+
+Some, array shifting algorithm would be useful here!
 
 Chances are, in practice, you would never go into this much detail about such a small fault. This is taking an opportunity to think about bugs, or software faults, in detailed and abstract terms. Which, is not only a great exercise, but, a useful and practical way to reason about the complexities of building quality into software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
 
