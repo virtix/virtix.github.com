@@ -136,7 +136,7 @@ x = [3,2,4,5]
 x = [3,4,2,5]
 x = [3,4,5,2]
 
-Some, array shifting algorithm would be useful here!
+Some, array shifting algorithm would be useful here to make test case inputs easier to generate!
 
 Chances are, in practice, you would never go into this much detail about such a small fault. This is taking an opportunity to think about bugs, or software faults, in detailed and abstract terms. Which, is not only a great exercise, but, a useful and practical way to reason about the complexities of building quality into software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
 

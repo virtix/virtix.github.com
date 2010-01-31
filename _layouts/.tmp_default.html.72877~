@@ -17,11 +17,6 @@
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushJScript.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushRuby.js'></script>
 <script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushPython.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushPlain.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushScala.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushGroovy.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushErlang.js'></script>
-<script language='javascript' src='http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/shBrushBash.js'></script>
 <script type="text/javascript">
 	SyntaxHighlighter.config.clipboardSwf = 'http://mxunit.s3.amazonaws.com/resources/syntax_highlighter/scripts/clipboard.swf';
 	SyntaxHighlighter.all();
