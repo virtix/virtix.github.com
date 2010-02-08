@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Blog in 90s
-published: false
+title: A Blog Post in 90 seconds
+published: true
 ---
 
 h1. {{ page.title }}

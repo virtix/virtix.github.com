@@ -7,7 +7,7 @@
    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAABx0lEQVQ4y42SPWhTYRiFn/feirUihZKqsRAJaFT8wyDN0KEdHBQVipNubgp2sbgKLbi5Cbo4iM51MVFanRzEv4g4RGhQQduaCrVEG2xJ7v2OQ5tAehvjGb9zvsN5D8dogR0922VmmBmlhXlrpYsQ8dhOAUirVN3EuQDwMIPSQqnxryPiaMZc/gGuWmVi6jXZZ2+4f3MEzEgMXGqfYPjEkB7eHkXmYb6BWyMU4pxIDo4w+2Om8c9bbzBx5xrlygo/yxUUOpCjWgv4/H0BzKN7W1eT3l9v8P7D9Ni+3s0sKca30hLnLo9x7HCaP8swU8gTTyaYfP52vGWCu7cugiAIAszgUfZG08FXLpxs0kcMercm8buriJDj/SniQSfyFlGtQmZogE37zzb1FikxKOZkgJMDDM8zhMAZGHSkzrTcRANhMadgOqtUYrcy6Yzcp8cKizn915BWRxSqVpzCNwcIYfh7T9d38u8Ei1/eSQolhQorc/r18Ynq+F1ejKSIlNi1Mrv2LF68KlAYvdfglr++pK2B79en4ZObfEr++tUG17NlwxqiKJXmtRGOHB1sfwLArr4+zMwOpIcxM9tz6BQH+8/TGUtHtH8B+PPMk6TyxcQAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
    
 <link type="text/css" rel="stylesheet" href="{{site.resources}}/resources/syntax_highlighter/styles/shCore.css"/>
-<link rel="stylesheet" href="{{ site.resources }}/resources/syntax_highlighter/styles/shThemeRDark.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="{{ site.resources }}/resources/syntax_highlighter/styles/shThemeDefault.css"/>
 
 	
 <script language='javascript' src='{{ site.resources }}/resources/syntax_highlighter/scripts/shCore.js'></script>
@@ -26,6 +26,7 @@
 	SyntaxHighlighter.config.clipboardSwf = '{{ site.resources }}/resources/syntax_highlighter/scripts/clipboard.swf';
 	SyntaxHighlighter.all();
 </script>
+<link rel="stylesheet" href="{{ site.resources }}/resources/syntax_highlighter/styles/shThemeRDark.css" type="text/css" />
 
 
 	<script src="http://www.google.com/jsapi?key=ABQIAAAA4Jd5s-5f4Vh2n-JPA_RGVhTCh4NniAK5cG_okncbQ3Tmh-o_vhQl8bGsNm8ylWeYcXWLj_g8HnB9wg" type="text/javascript"></script>
@@ -57,7 +58,7 @@
 <body>
 	
 <div style="float:left;height:100%;position:relative;" class="avatar">
-  <img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
+  <img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="float:left;cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
   <a class="extra" href="/" style="color:gray;text-align:left;">home</a>
 </div>
 

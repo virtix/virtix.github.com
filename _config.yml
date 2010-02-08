@@ -1,11 +1,11 @@
 destination:     ./_site
-auto:            false
+auto:            true
 lsi:             false
 server_port:     4000
 pygments:        true
 markdown:        rdiscount
 permalink:       date
-images:            http://i905.photobucket.com/albums/ac259/virtix
-_resources:         http://mxunit.s3.amazonaws.com
+images:          http://i905.photobucket.com/albums/ac259/virtix
+_resources:      http://mxunit.s3.amazonaws.com
 resources:
 sp:    <p>&nbsp;</p>
