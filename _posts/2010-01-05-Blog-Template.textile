@@ -1,63 +1,13 @@
 ---
 layout: post
-title: Template
-author: bill shelton
+title: My Blog Template
 published: false
 ---
 
 h1. {{ page.title }}
 
-p(meta). 4 January, 2010 - Alexandria, VA, by {{page.author}}
+p(meta). 4 January, 2010 - Alexandria, VA
 
-h2. Sample Images
+In order to use Eclipse and Mylyn Wikitext (Textile) to publish to Blogger, I  need to (1) generate HTML from textile, (2) parse HTML grabbing all the image tags. (3) Iterate over image tags filtering by relative local URL, and (4) upload each file to Picasa and (5)  then replace each image source URL in the HTML with the image URL as seen by Picassa. (6) Finally, post the resultant HTML to Blogger.
 
-Note url syntax
-!{{site.images}}/gears.jpg!
-
-
-h2. Some Code examples
-
-h3. gist example -- syntax gist.github.com/[gist_id].js
-
-<script src="http://gist.github.com/135149.js"></script>
-
-h3. Pygments (HTML)
-
-{% highlight html  %}
-<cffunction name="computeHash" access="public" returntype="String">
-  <cfargument name="password" type="string" />
-  <cfargument name="salt" type="string" />
-  <cfargument name="iterations" type="numeric" required="false" default="1024" />
-  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
-  <cfscript>
-    var hashed = '';
-    var i = 1;
-    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
-    for (i = 1; i <= iterations; i++) {
-      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
-    }
-    return hashed;
-  </cfscript>
-</cffunction>{% endhighlight %}
-
-h3. Syntax Highlighter
-
-<pre class="brush: cf;">
-  <cffunction name="computeHash" access="public" returntype="String">
-  <cfargument name="password" type="string" />
-  <cfargument name="salt" type="string" />
-  <cfargument name="iterations" type="numeric" required="false" default="1024" />
-  <cfargument name="algorithm" type="string" required="false" default="SHA512" />
-  <cfscript>
-    var hashed = '';
-    var i = 1;
-    hashed = hash( password & salt, arguments.algorithm, 'UTF-8' );
-    for (i = 1; i <= iterations; i++) {
-      hashed = hash( hashed & salt, arguments.algorithm, 'UTF-8' );
-    }
-    return hashed;
-  </cfscript>
-</cffunction>
-</pre>
-
-   
+Or I can just use Jekyll and Github :-) Well, if it were just me, I'd probably go with Jekyll and Github, but the MXUnit blog is shared and folks use different tools. Also, having a hacker's blog editor would be nice! 

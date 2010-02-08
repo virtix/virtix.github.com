@@ -1,0 +1,20 @@
+---
+layout: post
+title: Blog in 90s
+published: false
+---
+
+h1. {{ page.title }}
+
+p(meta). 8 February, 2010 - Alexandria, VA
+
+
+h2. Lorem ipsum verdi
+
+
+<pre class="brush: java">
+public static void main(String[] args){
+
+}
+
+</pre>

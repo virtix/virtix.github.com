@@ -123,7 +123,7 @@ Expected State    		Actual State
  PC =  if( x[i]==y )       	PC = return -1;     <--error state
 </pre>
 
-In more concrete terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  In RIP terms this is saying that Reachability was satisfied, Infection was also satisfied (an error state occurred), but Propagation did not occur. So, this software fault is not observable. Again, this is the kind of bug that, usually buried deep in some system, that causes us pain. It's very difficult to find after the fact, but a simple unit test up front would catch it.
+In more concrete terms, this is just saying the code didn't do what it was supposed to, because it never evaluated the conditional expression @if ( x[i]==y )@.  In RIP terms this is saying that Reachability was satisfied, Infection was also satisfied (an error state occurred), but Propagation did not occur. So, given the inputs, this software fault is not observable. Again, this is the kind of bug that, usually buried deep in some system, causes us pain. It's very difficult to find after the fact, but a simple unit test up front would catch it.
 
 Today, one test I would write would be make sure that the @y@ was present in every possible index of the array being searched:
 
@@ -133,9 +133,9 @@ x = [3,2,4,5]
 x = [3,4,2,5]
 x = [3,4,5,2]
 
-Some, array shifting algorithm would be useful here to make test case inputs easier to generate!
+Some array shifting algorithm would be useful here to make test case inputs easier to generate!
 
-Chances are, in practice, you would never go into this much detail about such a small fault. This is taking an opportunity to think about bugs, or software faults, in detailed and abstract terms. Which, is not only a great exercise, but, a useful and practical way to reason about the complexities of building quality into software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
+Chances are, in practice, you would never go into this much detail about such a small fault. This is taking an opportunity to think about bugs, or software faults, in detailed and abstract terms, which is not only a great exercise, but, it's also a useful and practical way to reason about the complexities of building quality into software. We're not constrained by a particular language implementation, or platform, and dealing with abstractions such as this transcends much of the industry noise and helps us to focus on the principals of software quality, rather than the software itself.
 
 Next up: Coverage Criteria.
 
