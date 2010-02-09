@@ -8,10 +8,9 @@ h1. {{ page.title }}
 
 p(meta). 9 February, 2010 - Alexandria, VA
 
-h1. write something
+h1. Write something
 
-foo bar
-
+foobar ...
 
 <pre class="brush:  ruby">
  require "test/unit"
@@ -24,5 +23,4 @@ class TestSomething < Test::Unit::TestCase
 end
 </pre>
 
-
-!/image/ss1.png!
+!/images/ss1.png!
