@@ -1,20 +1,50 @@
 ---
 layout: post
-title: A Blog Post in 90 seconds
+title: A Blog Post in 90 second
 published: true
 ---
 
 h1. {{ page.title }}
 
-p(meta). 8 February, 2010 - Alexandria, VA
+p(meta). 9 February, 2010 - Alexandria, VA
 
-
-h2. Lorem ipsum verdi
+h1. something simple
 
 
 <pre class="brush: java">
-public static void main(String[] args){
+  /**
+   * Searches the VOLUMES_FEED for search terms and print each resulting
+   * VolumeEntry.
+   *
+   * @param service a BooksService object.
+   * @param authenticated whether the user is authenticated.
+   * @throws ServiceException
+   *                     If the service is unable to handle the request.
+   * @throws IOException error sending request or reading the feed.
+   */
+  private static void searchVolumes(BooksService service,
+                                    boolean authenticated)
+      throws IOException, ServiceException {
+    VolumeQuery query = new VolumeQuery(new URL(VOLUMES_FEED));
 
-}
+    // exclude no-preview book (by default, they are included)
+    query.setMinViewability(VolumeQuery.MinViewability.PARTIAL);
 
+    System.out.println("\nEnter search terms: ");
+    String searchTerms = readLine();
+    System.out.println();
+
+    query.setFullTextQuery(searchTerms);
+
+    printUnderlined("Running Search for '" + searchTerms + "'");
+    VolumeFeed volumeFeed = service.query(query, VolumeFeed.class);
+    printVolumeFeed(volumeFeed);
+
+    if (authenticated) {
+      handleSearchVolumes(service, volumeFeed);
+    }
+  }
 </pre>
+
+
+!/images/ss2.png!
