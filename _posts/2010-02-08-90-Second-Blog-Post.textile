@@ -8,43 +8,21 @@ h1. {{ page.title }}
 
 p(meta). 9 February, 2010 - Alexandria, VA
 
+h1. write something
 
-h1. write something simple
+foo bar
 
 
-<pre class="brush: java">
-  /**
-   * Searches the VOLUMES_FEED for search terms and print each resulting
-   * VolumeEntry.
-   *
-   * @param service a BooksService object.
-   * @param authenticated whether the user is authenticated.
-   * @throws ServiceException
-   *                     If the service is unable to handle the request.
-   * @throws IOException error sending request or reading the feed.
-   */
-  private static void searchVolumes(BooksService service,
-                                    boolean authenticated)
-      throws IOException, ServiceException {
-    VolumeQuery query = new VolumeQuery(new URL(VOLUMES_FEED));
-
-    // exclude no-preview book (by default, they are included)
-    query.setMinViewability(VolumeQuery.MinViewability.PARTIAL);
-
-    System.out.println("\nEnter search terms: ");
-    String searchTerms = readLine();
-    System.out.println();
-
-    query.setFullTextQuery(searchTerms);
-
-    printUnderlined("Running Search for '" + searchTerms + "'");
-    VolumeFeed volumeFeed = service.query(query, VolumeFeed.class);
-    printVolumeFeed(volumeFeed);
-
-    if (authenticated) {
-      handleSearchVolumes(service, volumeFeed);
-    }
-  }
+<pre class="brush:  ruby">
+ require "test/unit"
+class TestSomething < Test::Unit::TestCase
+  
+  def test_this
+    assert true
+  end
+  
+end
 </pre>
 
-!/images/ss1.png!
+
+!/image/ss1.png!
