@@ -8,7 +8,8 @@ h1. {{ page.title }}
 
 p(meta). 9 February, 2010 - Alexandria, VA
 
-h1. something simple
+
+h1. write something simple
 
 
 <pre class="brush: java">
@@ -46,5 +47,4 @@ h1. something simple
   }
 </pre>
 
-
-!/images/ss2.png!
+!/images/ss1.png!
