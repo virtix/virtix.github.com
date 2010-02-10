@@ -6,6 +6,6 @@ pygments:        true
 markdown:        rdiscount
 permalink:       date
 images:          http://i905.photobucket.com/albums/ac259/virtix
-_resources:      http://mxunit.s3.amazonaws.com
-resources:
+resources:      http://mxunit.s3.amazonaws.com
+_resources:
 sp:    <p>&nbsp;</p>
