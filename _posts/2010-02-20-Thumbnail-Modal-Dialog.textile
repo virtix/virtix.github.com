@@ -22,11 +22,16 @@ My solution is to create the image, write the image href into textile with a CSS
 
 @!(tn200)/images/Screenshot-1.png!@ Where '!' specifies an image in textile and @(tn200)@ is a CSS style.
 
-The JQuery code to execute the ColorBox modal dialog is simple, too:
+TheCSS and  JQuery code to execute the ColorBox modal dialog is simple, too:
 
-<pre class="brush: javascript">
+<pre class="brush:  html">
+<style>
+.tn200{ width:200px }
+</style>
 
-$('.tn100,.tn200,.tn300').bind('click',function(){
+<script>
+$().ready(function(){
+	$('.tn100,.tn200,.tn300').bind('click',function(){
 		$('.tn100,.tn200,.tn300').colorbox( {
 			title: this.src,
 			href: this.src,
@@ -34,8 +39,9 @@ $('.tn100,.tn200,.tn300').bind('click',function(){
 			maxHeight:900,
 			maxWidth:1200
 			});
- }); 
-
+	 }); 
+ });
+</script>
 </pre>
 
 
