@@ -1,0 +1,68 @@
+---
+layout: post
+title: Thumbnailed Screen Shots and Modal Dialogs
+published: true
+draft: false
+draft_message:  _DRAFT - Subject to change_
+pub_date: February 10, 2010
+---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }}
+
+
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+
+
+I am somewhat visual, and I do like a good graphic to represent information, ideas, and concepts. But creating, resizing, and uploading images is slow for blogging. What I want to do is grab an image (a screen shot, for example), include a thumbnail in a blog post and when the reader clicks it, it opens up a nice modal dialog. With CSS we can automatically size the image down as the page loads, which is nice. But we also want to the reader to view the full size image. 
+
+My solution is to create the image, write the image href into textile with a CSS style attribute, specifying the desired thumbnail width (240px, for example). Now, we need a way to view the full size image. A modal dialog would be nice ... Thanks to Jack at "ColorBox":http://colorpowered.com/colorbox/ I can display a very nice modal dialog of a thumbnail. The textile source looks something like this:
+
+@!(tn200)/images/Screenshot-1.png!@ Where '!' specifies an image in textile and @(tn200)@ is a CSS style.
+
+The JQuery code to execute the ColorBox modal dialog is simple, too:
+
+<pre class="brush: javascript">
+
+$('.tn100,.tn200,.tn300').bind('click',function(){
+		$('.tn100,.tn200,.tn300').colorbox( {
+			title: this.src,
+			href: this.src,
+			transition: 'elastic',
+			maxHeight:900,
+			maxWidth:1200
+			});
+ }); 
+
+</pre>
+
+
+
+h3. Some Examples
+
+240px wide thumbnail opening full size image in a modal dialog:
+
+!(tn200)/images/Screenshot-1.png!
+
+<br />
+
+320px wide thumbnail opening a full size image in a modal dialog:
+!(tn300)/images/DestroyTwitter.png! 
+
+<br />
+
+120px wide thumbnail opening a full size image in a modal dialog:
+!(tn100){{ site.images }}/back_to_school.jpg!
+
+
+300px wide thumbnail opening a full size image in a _browser_ window (good for large or his res images):
+!(tn)/images/Screenshot-2.png!:/images/Screenshot-2.png
+
+
+h4. Quick Summary
+
+Once set up with JQuery and "ColorBox":http://colorpowered.com/colorbox/, I can now load images into Photobucket or locally and use the following to automatically generate a thumbnail that displays in a very nice modal dialog:
+
+@!(tn200)/images/Screenshot-1.png!@

@@ -44,49 +44,11 @@
    <!-- syntax highlighting CSS (used with Pygments) -->
    <link rel="stylesheet" href="/resources/css/syntax.css" type="text/css" />
    
-   <script src="/resources/jquery.jScale.js"></script>
-   
    <script src="/resources/tipsy/javascripts/jquery.tipsy.js"></script>
    <link rel="stylesheet" href="/resources/tipsy/stylesheets/tipsy.css" type="text/css" media="screen, projection" />
-  
-  <script type='text/javascript' src='/resources/colorbox/jquery.colorbox.js'></script>
-  <link rel="stylesheet" href="/resources/colorbox/colorbox.css" type="text/css" media="screen, projection" />
-
-  <style>
-  	/* automatic thumbnail selector */
-	.tn {
-		width:300px;
-	}
-	
-	.tn100 {
-		width:120px;
-	}
-	.tn200 {
-		width:240px;
-	}
-	
-	.tn300 {
-		width:320px;
-	}
-	
-	
-  </style>
-  
    <script>
-   	$().ready(function(){
-	 
-	 $('#me').tipsy({fade:true,gravity:'s'});
-      $('.tn100,.tn200,.tn300').bind('click',function(){
-		$('.tn100,.tn200,.tn300').colorbox( {
-			title: this.src,
-			href: this.src,
-			transition: 'elastic',
-			maxHeight:900,
-			maxWidth:1200
-			});
-	 
-       });   
-   
+   	$(document).ready(function(){
+		$('#me').tipsy({fade:true,gravity:'s'});
 	});
 	
    </script>

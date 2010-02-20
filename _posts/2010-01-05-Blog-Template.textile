@@ -1,13 +1,44 @@
 ---
 layout: post
-title: My Blog Template
+title: Blog Template
 published: false
+draft: true
+draft_message:  _DRAFT - Subject to change_
+pub_date: February 10, 2010
 ---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
 
 h1. {{ page.title }}
 
-p(meta). 4 January, 2010 - Alexandria, VA
 
-In order to use Eclipse and Mylyn Wikitext (Textile) to publish to Blogger, I  need to (1) generate HTML from textile, (2) parse HTML grabbing all the image tags. (3) Iterate over image tags filtering by relative local URL, and (4) upload each file to Picasa and (5)  then replace each image source URL in the HTML with the image URL as seen by Picassa. (6) Finally, post the resultant HTML to Blogger.
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
 
-Or I can just use Jekyll and Github :-) Well, if it were just me, I'd probably go with Jekyll and Github, but the MXUnit blog is shared and folks use different tools. Also, having a hacker's blog editor would be nice! 
+h2. Sub-heading
+
+ 
+
+{% comment %} 
+  Enter brilliance here
+  
+  Common elements:
+  
+  images (photobucket):
+  !{{site.images}}/image.png!
+
+  images (local):
+  !/images/image.png!
+
+ code (inline):
+ @snippet@
+ 
+ code (syntax highlighter):
+ <pre class="brush: java">
+  public class Foo{
+   //...
+  }
+ </pre>
+
+ {% endcomment %}
+

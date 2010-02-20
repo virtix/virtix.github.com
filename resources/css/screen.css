@@ -4,11 +4,17 @@
 /*
 /*****************************************************************************/
 
+
+.draft {
+	color:darkred;
+}
+
+
 /* Global Reset */
 
 img{
 	padding:2em;
-	border-style:none;
+	border-style:none;S
 }
 
 a>img{
