@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Thumbnailed Screen Shots and Modal Dialogs
+title: Thumbnailed Screenshots and Modal Dialogs for Blogging
 published: true
 draft: false
 draft_message:  _DRAFT - Subject to change_
-pub_date: February 10, 2010
+pub_date: February 20, 2010
 ---
 
 {% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
@@ -16,11 +16,9 @@ p(meta). {{ page.pub_date }}  - {{site.location}}
 Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
 
 
-I am somewhat visual, and I do like a good graphic to represent information, ideas, and concepts. But creating, resizing, and uploading images is slow for blogging. What I want to do is grab an image (a screen shot, for example), include a thumbnail in a blog post and when the reader clicks it, it opens up a nice modal dialog. With CSS we can automatically size the image down as the page loads, which is nice. But we also want to the reader to view the full size image. 
+I am somewhat visual, and I like a good graphic to represent information, ideas, and concepts. But creating, resizing, and uploading images is slow for blogging. What I want to do is grab an image (a screen shot, for example), include a thumbnail in a blog post and when the reader clicks it, it opens up a nice modal dialog. With CSS we can automatically size the image down as the page loads, which is nice. But we also want to the reader to be able to view the full size image. 
 
-My solution is to create the image, write the image href into textile with a CSS style attribute, specifying the desired thumbnail width (240px, for example). Now, we need a way to view the full size image. A modal dialog would be nice ... Thanks to Jack at "ColorBox":http://colorpowered.com/colorbox/ I can display a very nice modal dialog of a thumbnail. The textile source looks something like this:
-
-@!(tn200)/images/Screenshot-1.png!@ Where '!' specifies an image in textile and @(tn200)@ is a CSS style.
+My solution&mdash;I would like to hear others&mdash;is to write the image's URL into my textile document with a CSS style attribute, specifying the desired thumbnail (240px wide, for example). Now, I  need a way to view the full image. Thanks to Jack's "ColorBox":http://colorpowered.com/colorbox/ I can display a very nice modal dialog of a thumbnail. The textile source looks something like this: @!(tn200)/images/Screenshot-1.png!@ Where '!' specifies an image in textile and @(tn200)@ is a CSS style.
 
 TheCSS and  JQuery code to execute the ColorBox modal dialog is simple, too:
 
@@ -33,17 +31,17 @@ TheCSS and  JQuery code to execute the ColorBox modal dialog is simple, too:
 $().ready(function(){
 	$('.tn100,.tn200,.tn300').bind('click',function(){
 		$('.tn100,.tn200,.tn300').colorbox( {
-			title: this.src,
-			href: this.src,
-			transition: 'elastic',
-			maxHeight:900,
-			maxWidth:1200
-			});
+				title: '<a href="' + this.src + '">View Original</a>',
+				href: this.src,
+				transition: 'elastic',
+				maxHeight:900,
+				maxWidth:1200
+		});
 	 }); 
  });
 </script>
 </pre>
-
+@this@ refers to the image object. Full raw "textile":http://github.com/virtix/virtix.github.com/raw/master/_posts/2010-02-20-Thumbnail-Modal-Dialog.textile of this blog post.
 
 
 h3. Some Examples
@@ -59,7 +57,7 @@ h3. Some Examples
 
 <br />
 
-120px wide thumbnail opening a full size image in a modal dialog:
+120px wide thumbnail opening a full size image in a modal dialog from Photobucket:
 !(tn100){{ site.images }}/back_to_school.jpg!
 
 

@@ -78,7 +78,7 @@
 	 $('#me').tipsy({fade:true,gravity:'s'});
       $('.tn100,.tn200,.tn300').bind('click',function(){
 		$('.tn100,.tn200,.tn300').colorbox( {
-			title: '<a href="' + this.src + '">View Original</a>',
+			title: this.src,
 			href: this.src,
 			transition: 'elastic',
 			maxHeight:900,
