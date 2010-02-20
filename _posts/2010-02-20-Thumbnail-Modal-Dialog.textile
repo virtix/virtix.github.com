@@ -61,12 +61,12 @@ h3. Some Examples
 !(tn100){{ site.images }}/back_to_school.jpg!
 
 
-300px wide thumbnail opening a full size image in a _browser_ window (good for large or his res images):
+300px wide thumbnail opening a full size image in a _browser_ window. This is an alternative to modal dialogs and might be good for large or hi-res images:
 !(tn)/images/Screenshot-2.png!:/images/Screenshot-2.png
 
 
 h4. Quick Summary
 
-Once set up with JQuery and "ColorBox":http://colorpowered.com/colorbox/, I can now load images into Photobucket or locally and use the following to automatically generate a thumbnail that displays in a very nice modal dialog:
+Once set up with "JQuery":http://jquery.org and "ColorBox":http://colorpowered.com/colorbox/, I can now load images from Photobucket or locally and use the following to automatically generate a thumbnail that displays in a very nice modal dialog:
 
 @!(tn200)/images/Screenshot-1.png!@
