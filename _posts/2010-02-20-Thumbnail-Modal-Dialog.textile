@@ -29,15 +29,13 @@ TheCSS and  JQuery code to execute the ColorBox modal dialog is simple, too:
 
 <script>
 $().ready(function(){
-	$('.tn100,.tn200,.tn300').bind('click',function(){
-		$('.tn100,.tn200,.tn300').colorbox( {
-				title: '<a href="' + this.src + '">View Original</a>',
-				href: this.src,
-				transition: 'elastic',
-				maxHeight:900,
-				maxWidth:1200
-		});
-	 }); 
+	 $('.tn100,.tn200,.tn300').colorbox( {
+			title: function(){ return '<a href="' + $(this).attr('src') + '">View Original</a>' },
+			href: function(){ return  $(this).attr('src')  },
+			transition: 'elastic',
+			maxHeight:840,
+			maxWidth:1180
+       }); 
  });
 </script>
 </pre>
