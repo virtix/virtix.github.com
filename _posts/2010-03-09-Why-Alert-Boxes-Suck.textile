@@ -38,8 +38,6 @@ p(meta). {{ page.pub_date }}  - {{site.location}}
 Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
 
 
-<a href="javascript:void();" id="nanoo">huh?</a>
-
 !(example){{ site.images }}/no-alerts.png!
 Back in 1997, being able to create a modal dialog with one line of code was novel&mdash;and, I dare say, even useful at times. Naturally, wanting to show off to my employer and friends, I used these dialog boxes loosely.  I even think I put it on my resume, "Possess keen sense of usability and web design though modal dialog construction". It started out innocently enough.  Just a small Alert to let you know you're email address was not in the correct format. I soon found many uses for these brilliant UI widgets, including Alert's evil sibling <a href="#" onclick="c();">Confirm</a>.
 
