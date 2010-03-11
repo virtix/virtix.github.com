@@ -44,10 +44,7 @@
    <!-- syntax highlighting CSS (used with Pygments) -->
    <link rel="stylesheet" href="/resources/css/syntax.css" type="text/css" />
    
-   
-   <script src="/resources/jgrowl/jquery.jgrowl_compressed.js"></script>
-   <link rel="stylesheet" href="/resources/jgrowl/jquery.jgrowl.css" type="text/css" media="screen, projection" />
-
+   <script src="/resources/jquery.jScale.js"></script>
    
    <script src="/resources/tipsy/javascripts/jquery.tipsy.js"></script>
    <link rel="stylesheet" href="/resources/tipsy/stylesheets/tipsy.css" type="text/css" media="screen, projection" />
@@ -120,13 +117,10 @@
   	<div id="disc_data" style="display:none;visibility:hidden;">
 	<h4 style="color:#2d1c1c;">Disclaimer</h4>
 	<div style="color:#4d4d4d;;font-size:1.25em;text-align:justify;">
-	What's expressed here are my own opinions about various things technical and otherwise. It doesn't
+	What's expressed here are just some of my own opinions about various things technical and otherwise. It doesn't
 	express the opinion of my employer or any organization with which I am involved. More importantly, as much as I try, 
-	what's written here likely has errors and, at times, may make little sense to anyone other than the author. Further,
-	I do exercise my belief in the right to free speech and expression. As such, there will be language considered offensive
-	to some.
-	<br /><br />
-	 Feedback, corrections, complaints, and suggestions, are always welcome.
+	what's written here likely has errors and, at times, may make little sense to anyone other than the author. Feedback,
+	corrections, and suggestions, are always welcome.
 	<br /><br />
 	-bill shelton
 	

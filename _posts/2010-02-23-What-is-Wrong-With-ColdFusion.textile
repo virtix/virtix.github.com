@@ -1,0 +1,96 @@
+---
+layout: post
+title: What would make ColdFusion better
+published: false
+draft: true
+draft_message:  _DRAFT - Subject to change_
+pub_date: February 10, 2010
+---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }}
+
+
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+
+h2. This is a simple plea ...
+
+I really like ColdFusion _for some things_; that is, for developing web applications _only_. I think the CF engineers at Adobe and Railo have done an excellent job at building a fast scalable, web processing engine that integrates well into many existing architectures and products&mdash;.NET, Sharepoint, PDF, Hiberbate, etc. 
+
+h3. My problem(s)?
+
+Every web app I build today has numerous dependencies on things _outside_ of the HTTP world. I usually have some kind of automation that does builds, or requests data or services from some disparate system(s). Take, for example, running a scheduled task that pulls in some data from some system, writes it to a file or data store, and sends out notifications on success or failure. The data is eventually consumed by a ColdFusion web app, but doing this kind of thing in ColdFusion but it's not well suited.
+
+h3. "So what?", you might ask ...
+
+Ok, look around the corner a bit, or even over your shoulder. How would you address repeated tasks similar to this? You have a couple of options depending on the specifics of the task. You could write a little Java app and wrap it in Ant. You could do some shell scripts. You could do Ant. What's appealing to me is Python and Ruby. The languages are very terse, fast, and work great for task automation. Now here's some gold for these scripting languages ...
+
+h2. They are _also_ used in building web apps
+
+The Gemcutter stuff in Ruby is awesome. Need a new component? Just execute @gem install my_new_component@ . Or with Python, @easy_install my_python_component@
+
+*What if ColdFusion could do this?*
+
+This is what it could look like:
+
+<pre class="brush: cf">
+
+
+
+component name="my_task" {
+
+	function main(args){
+	   try{
+	      get_some_remote_file( args[1] );
+	      process_remote_file();
+	      send_emails();
+	   }
+	   catch(e){
+	      logit(e);
+	   }
+	}
+
+    function get_some_remote_file(){
+       var f = new File( "/path/to/file.xml" );
+       for (var item : f ){
+          ...
+       }
+              
+    }
+    
+}
+
+</pre>
+
+
+
+ 
+
+bill shelton
+ 
+
+{% comment %} 
+  Enter brilliance here
+  
+  Common elements:
+  
+  images (photobucket):
+  !{{site.images}}/image.png!
+
+  images (local):
+  !/images/image.png!
+
+ code (inline):
+ @snippet@
+ 
+ code (syntax highlighter):
+ <pre class="brush: java">
+  public class Foo{
+   //...
+  }
+ </pre>
+
+ {% endcomment %}
+
