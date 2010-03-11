@@ -15,7 +15,7 @@ h1. {{ page.title }}
 <script>
  
  c = function(){
-   var mess = "Is this fucking annoying or what?";
+   var mess = "Is this completely invasive or what?";
    if( confirm(mess) ){
      alert( "I'm making you click this for no reason.\n How considerate of me." );
      return true;
