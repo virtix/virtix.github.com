@@ -4,7 +4,7 @@ title: Why Alert Boxes Suck
 published: true
 draft: false
 draft_message:  _DRAFT - Subject to change_
-pub_date: March 9, 2010
+pub_date: March 11, 2010
 ---
 
 <style>.example{float:right;width:300px;}</style>
