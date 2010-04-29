@@ -56,8 +56,7 @@ There's always room for improvement. There may not be time; however, given the o
 
 h3. 6. Do not overwrite
 
-Keep your code as simple as possible, focusing on your own understanding of the problem you're attempting to solve. If a piece of code is trying to 
-solve more than one problem, it might be a smell and possibly should be refactored to a different component. 
+Keep your code as simple as possible, focusing on your own understanding of the problem you're attempting to solve. If a piece of code is trying to solve more than one problem, it might be a smell and possibly should be refactored to a different component. 
 
 
 h3. 7. Do not overstate

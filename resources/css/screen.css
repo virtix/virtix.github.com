@@ -183,13 +183,20 @@ ul.posts {
     margin-left: 1.25em;
   }
 
+
+/*
+ *   not needed and conflicts with pygments and syntax higghlighter 
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+	  padding: 2em;
+	  color: #979B96;
+    background-color: #1B2426 !important;
     font-size: 95%;
     padding: 0 .2em;
   }
 
+ * 
+ * */
     #post pre code {
       border: none;
     }

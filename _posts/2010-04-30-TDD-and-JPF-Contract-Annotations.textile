@@ -1,0 +1,182 @@
+---
+layout: post
+title: Testing with Java Path Finder Contract Annotations
+published: true
+draft: false
+draft_message: 
+pub_date: April 30, 2010
+---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }}
+
+
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+
+
+h2. Background
+
+
+| Design by Contract (DbC), a metaphor and concept Bertrand Myer coined some time ago with respect to the Eiffel language and OO, has it's roots in "Hoare's Triple":http://en.wikipedia.org/wiki/Hoare_logic#Hoare_Triple. Informally, DbC states that given a precondition, a program will guarantee a postcondition. If the precondition is not met, the program will fail hard (throw an exception). In other words, my method should do exactly what the interface says it will do. No more. No less. 
+<BR/>One key point with DbC is that satisfying the precondition is the responsibility of the client, not the provider. This doesn't mean we (the provider) don't perform validation, but we're simply not in the business of _correcting_ the inputs. We do need to inspect the inputs (as well as the outputs) to guarantee the contract. | !{{site.images}}/eraserhead-2.jpg! |
+
+
+
+An example contract written in Java would use Javadoc to help articulate the specification:
+
+<pre class="brush: java">
+
+public class Contract {
+
+	/**
+	 * Applies a payment on the specified date.
+	 * 
+	 * @param amount the amount to be paid
+	 * @param the date on which to apply the payment
+	 * 
+	 * */
+	public void submitPayment(double amount, Calendar date) {
+		
+		//...do something that really makes a payment
+		return;
+	}
+	
+}
+
+</pre>
+
+We're not concerned just yet about the details of how a payment is submitted, but rather, we want to see how the contract is honored. 
+
+h2. Testing the Contract
+
+It doesn't take too much effort to see that our unit tests are simply testing that contract:
+
+<pre class="brush: java">
+
+ 	@Test
+	public void testSubmitPayment() {
+		Calendar date = new GregorianCalendar();
+		double amount = 99.99;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+
+</pre>
+
+The example may look so typical and simple the ambiguities may not be immediately obvious. On the surface there're a number of assumptions. What if @amount@ is negative? Can we submit a payment for sometime in the future? Neither of these (or other questions) are addressed in the specification. To add some clarity, let's say that payments must be a positive number and payments cannot be made in the future. If those preconditions are not met, we'll throw an exception. Better?  
+
+<pre class="brush: java">
+
+ 	/**
+	 * Applies a payment on the specified date.
+	 * 
+	 * @param amount a positive amount to be paid
+	 * @param date a date not in the future on which to apply the payment
+	 * @throws Throwable
+	 * 
+	 * */
+	public void submitPayment(double amount, Calendar date) {
+		
+		//...do something that really makes a payment
+		return;
+	}
+
+</pre>
+
+Let's add some clarity to this by way of testing:
+
+
+<pre class="brush: java">
+	@Test(expected=Throwable.class)
+	public void testFutureDateThrowsException() {
+		Calendar date = new GregorianCalendar(2222,1,1);
+		double amount = 0.00001;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+	
+	
+	@Test(expected=Throwable.class)
+	public void testSubmitPositivePaymentLessThanOneCentThrowsException() {
+		Calendar date = new GregorianCalendar();
+		double amount = 0.009;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+	
+
+	@Test(expected=Throwable.class)
+	public void testSubmitOldPayment() {
+		Calendar date = new GregorianCalendar(1912,6,23);
+		double amount = -99.99;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+	
+	
+	@Test(expected=Throwable.class)
+	public void testSubmitNegativePayment() {
+		Calendar date = new GregorianCalendar();
+		double amount = -99.99;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+	
+	
+	@Test
+	public void testSubmitPayment() {
+		Calendar date = new GregorianCalendar();
+		double amount = 100.998837;
+		System.out.print(date);
+		Contract contract =  new Contract();
+		contract.submitPayment(amount, date);
+	}
+</pre>
+
+h2. TDD
+
+From a TDD perspective, we've done pretty good. We've written a number of tests prior to our  production code and the tests also serve as the specs. And the tests are telling us what we need to do. The most obvious next steps would be to place some code at the top of the method that does some checking and throws the appropriate exception(s).  The nature of the tests suggests a blacklist approach, but that could be a nightmare to manage down  the road. There's something else possible :
+
+
+h2. Java Path Finder ("http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart":http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart)
+
+!<{{site.images}}/saturn5_apollo11.gif!
+
+NASA has begun to open source some of their software. In particular, the Ames Research Lab in San Jose, CA, has a number of interesting projects. Java Path Finder (JFP) is one that, although around for some time, is new to me. It started out as a model checking tool, but has evolved into much more. I'm not going to go into too many details, but essentially, there's a JPF core and a number of sub-projects, or plugins. What they have built for software testing and verification is mind blowing. The docs are thin, but the examples are good and non-trivial. 
+
+
+The one component of interest here is the "jpf-aprop":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-aprop, or JPF Annotation Properties for specifications.  The core aspects of our tests remain, but our implementation changes. For the Contract class, it now looks like this:
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<pre class="brush: java">
+
+	@Requires("amount >= .01")
+	public void submitPayment(double amount, Calendar date) {
+		
+		//...do something that really makes a payment
+		return;
+	}
+	
+</pre>
+
+ 
+
+
+   
+
+(Coincidentally, both Bertrand and Tony are giving keynotes at "TAIC PART":http://www2010.taicpart.org/index.html in September 2010). 
+
+
