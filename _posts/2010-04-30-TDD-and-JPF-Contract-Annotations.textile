@@ -16,128 +16,69 @@ p(meta). {{ page.pub_date }}  - {{site.location}}
 Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
 
 
-h2. Background
+h2. Design by Contract (DbC)
 
+<p />
 
-| Design by Contract (DbC), a metaphor and concept Bertrand Myer coined some time ago with respect to the Eiffel language and OO, has it's roots in "Hoare's Triple":http://en.wikipedia.org/wiki/Hoare_logic#Hoare_Triple. Informally, DbC states that given a precondition, a program will guarantee a postcondition. If the precondition is not met, the program will fail hard (throw an exception). In other words, my method should do exactly what the interface says it will do. No more. No less. 
-<BR/>One key point with DbC is that satisfying the precondition is the responsibility of the client, not the provider. This doesn't mean we (the provider) don't perform validation, but we're simply not in the business of _correcting_ the inputs. We do need to inspect the inputs (as well as the outputs) to guarantee the contract. | !{{site.images}}/eraserhead-2.jpg! |
+|^.Bertrand Myer coined a metaphorical concept with respect to the Eiffel language and OO&mdash;Design By Contract or DbC, and it has it's roots in "Hoare's Triple":http://en.wikipedia.org/wiki/Hoare_logic#Hoare_Triple. Informally, DbC states that given a precondition, a program will guarantee a postcondition. If the precondition is _not_ met, the program will fail hard (throw an exception). 
+<BR/>One key point with DbC is that satisfying the precondition is the responsibility of the client, not the provider. This means the provider may perform validation, but , the provider is simply not in the business of _correcting_ the inputs. The provider  inspects the inputs (as well as the outputs to guarantee the contract), but DbC says that it's the client who _ensures_ the precondition and the provider who _guarantees_ the postcondition. |^. !{{site.images}}/eraserhead-2.jpg! |
 
-
-
-An example contract written in Java would use Javadoc to help articulate the specification:
+In Java we can use Javadoc to help articulate the contract:
 
 <pre class="brush: java">
-
-public class Contract {
+public class Contract  {
 
 	/**
-	 * Applies a payment on the specified date.
+	 * Applies a payment on behalf of the specified Account.
 	 * 
-	 * @param amount the amount to be paid
-	 * @param the date on which to apply the payment
+	 * @param account an Account object
+	 * @param amount the amount to withdraw from an account.
+	 * @throws NullPointerException
 	 * 
 	 * */
-	public void submitPayment(double amount, Calendar date) {
-		
-		//...do something that really makes a payment
-		return;
+	public double makePayment(Account account, double amount)  {
+	    account.setBalance(amount);
+		return account.getBlance();
 	}
-	
-}
 
+}	
 </pre>
 
-We're not concerned just yet about the details of how a payment is submitted, but rather, we want to see how the contract is honored. 
+We're not concerned just about the mechanics of how a payment is submitted, but rather, we want to see how the contract is honored and how we can test it. 
 
 h2. Testing the Contract
 
-It doesn't take too much effort to see that our unit tests are simply testing that contract:
+It doesn't take too much effort to see that our unit tests are simply testing that contract. This is true for most unit tests&mdash;unit tests test the _contract_ specified by the API.
 
 <pre class="brush: java">
 
  	@Test
-	public void testSubmitPayment() {
-		Calendar date = new GregorianCalendar();
-		double amount = 99.99;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
+	public void testMakePayment() {
+		double amount = 0.01;
+		double actual = contract.makePayment(account, amount);
+		assertEquals(99.99, actual, 0.01); 
 	}
 
 </pre>
 
-The example may look so typical and simple the ambiguities may not be immediately obvious. On the surface there're a number of assumptions. What if @amount@ is negative? Can we submit a payment for sometime in the future? Neither of these (or other questions) are addressed in the specification. To add some clarity, let's say that payments must be a positive number and payments cannot be made in the future. If those preconditions are not met, we'll throw an exception. Better?  
+The example may look so typical and simple the ambiguities may not be immediately obvious. But there're a number of unarticulated assumptions. Namely, the contract here is only considering _normal_ inputs and does not give much indication in the way of exceptional behavior. What if @amount@ is negative? What is an allowable balance for an @Account@&mdash;0,<0 ? Neither of these (or other questions) are addressed in the specification. 
+
+To add some clarity, let's say that payments must be a positive number and the account can't be null. If those preconditions are not met, we'll throw an exception. Better?  
 
 <pre class="brush: java">
-
- 	/**
-	 * Applies a payment on the specified date.
-	 * 
-	 * @param amount a positive amount to be paid
-	 * @param date a date not in the future on which to apply the payment
-	 * @throws Throwable
-	 * 
-	 * */
-	public void submitPayment(double amount, Calendar date) {
-		
-		//...do something that really makes a payment
-		return;
+@Test(expected=NullPointerException.class)
+	public void nullAccountShouldThrowNPE() {
+		double amount = 0.01;
+		double actual = contract.makePayment(null, amount);
 	}
-
+	
+	
 </pre>
 
 Let's add some clarity to this by way of testing:
 
 
 <pre class="brush: java">
-	@Test(expected=Throwable.class)
-	public void testFutureDateThrowsException() {
-		Calendar date = new GregorianCalendar(2222,1,1);
-		double amount = 0.00001;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
-	}
-	
-	
-	@Test(expected=Throwable.class)
-	public void testSubmitPositivePaymentLessThanOneCentThrowsException() {
-		Calendar date = new GregorianCalendar();
-		double amount = 0.009;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
-	}
-	
-
-	@Test(expected=Throwable.class)
-	public void testSubmitOldPayment() {
-		Calendar date = new GregorianCalendar(1912,6,23);
-		double amount = -99.99;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
-	}
-	
-	
-	@Test(expected=Throwable.class)
-	public void testSubmitNegativePayment() {
-		Calendar date = new GregorianCalendar();
-		double amount = -99.99;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
-	}
-	
-	
-	@Test
-	public void testSubmitPayment() {
-		Calendar date = new GregorianCalendar();
-		double amount = 100.998837;
-		System.out.print(date);
-		Contract contract =  new Contract();
-		contract.submitPayment(amount, date);
-	}
 </pre>
 
 h2. TDD
@@ -161,16 +102,6 @@ The one component of interest here is the "jpf-aprop":http://babelfish.arc.nasa.
 <br />
 <br />
 
-<pre class="brush: java">
-
-	@Requires("amount >= .01")
-	public void submitPayment(double amount, Calendar date) {
-		
-		//...do something that really makes a payment
-		return;
-	}
-	
-</pre>
 
  
 

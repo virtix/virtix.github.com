@@ -4,6 +4,30 @@
 /*
 /*****************************************************************************/
 
+#topline {
+	position:absolute;  
+	top:1; 
+	height: 14px; 
+	width:100%; 
+	background-image:url('/images/stripe.png');
+  background-repeat:repeat-x;
+	}
+
+#homebadge { 
+  position: absolute; 
+  top: 120px; 
+	left:0px; 
+	background-color:#f6a95c;
+	width:50px; 
+	height:100px; 
+	margin-top:10px;
+	text-align:center;
+  -moz-border-radius-topright:    1em;
+  -moz-border-radius-bottomright: 1em;
+	cursor:pointer;
+	background-image:url('/images/home.png');
+  background-repeat:no-repeat;
+}
 
 .draft {
 	color:darkred;
@@ -13,8 +37,8 @@
 /* Global Reset */
 
 img{
-	padding:2em;
-	border-style:none;S
+	padding:1.5em;
+	border-style:none;
 }
 
 a>img{
@@ -99,9 +123,10 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 72em;
-  margin: 3em auto 2em auto;
+  min-width:54em;
+  margin: 3em 2em 2em 5em;
   line-height: 1.5em;
+	text-align:justify;
 }
 
 .title {

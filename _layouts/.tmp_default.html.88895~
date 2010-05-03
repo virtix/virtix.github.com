@@ -84,19 +84,7 @@
    <script>
    	$().ready(function(){
 	 
-	 //really only need to do this once
-	  //a=[{% for post in site.posts %}{'{{ post.title }}':'{{ post.url }}'},{% endfor %}];
-	 
-	 $('#homebadge').click(function(){
-	 	location.href='/';
-	 });
-	 
-	 //go home if user hits 'h'
-	 $('*').keyup( function(e) {
-	 	  if(e.which===72) location.href='/';
-	 });
-	 
-	 $('#me,#homer').tipsy({fade:true,gravity:'s'});
+	 $('#me').tipsy({fade:true,gravity:'s'});
       $('.tn100,.tn200,.tn300').colorbox( {
 			title: function(){ return '<a href="' + $(this).attr('src') + '">View Original</a>' },
 			href: function(){ return  $(this).attr('src')  },
@@ -121,7 +109,7 @@
 </head>
 
 <body>
-<div id="topline" />	
+	
 
 <div class="site">
  

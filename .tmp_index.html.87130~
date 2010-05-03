@@ -5,14 +5,15 @@ title: goodcoder
 <div id="home">
 	<table border="0">
 		<tr>
-			<td align="center" valign="top" style="padding-right:4em">
+			<td align="center" valign="top">
 					<div style="float:left;height:100%;" class="avatar">
 					  <img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
+					  <a class="extra" href="/" style="color:gray;text-align:left;">home</a><br/><br/>
 					  <a class="extra" href="#" style="color:gray;text-align:left;" id="disclaimer">disclaimer</a>
 					</div>
 				</td>
 			<td valign="top">
-<pre id="homenav" style="margin:0;font-size:14px;">
+<pre style="margin:0;font-size:14px;">
 {
  'professions' : ['programmer', 'student', 'do gooder'],
  'real_name' : 'bill shelton',
