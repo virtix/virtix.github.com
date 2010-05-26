@@ -56,6 +56,7 @@ h2. Testing the Contract
 
 It doesn't take too much effort to see that our unit tests are simply testing that contract. This is true for most unit tests&mdash;unit tests test the _contract_ specified by the API.
 
+<div style="max-width:720px">
 <pre class="brush: java">
 
  	@Test
@@ -67,13 +68,13 @@ It doesn't take too much effort to see that our unit tests are simply testing th
 	}
 
 </pre>
-
+</div>
 
 The example may look so typical and simple the ambiguities may not be immediately obvious. But there're a number of problematic assumptions. Namely, the contract here is only considering _normal_ inputs and does not give much indication in the way of the state of @Account@ or exceptional behavior. For example, what if @amount@ is negative? What is an allowable balance for an @Account@? Zero , less than Zero ? Neither of these (or other questions) are addressed in the example specification.
 
 Our test is a step towards formulating our specification. However, we still would like to know when an invalid state is reached in the @Account@ object. Better yet, we should allow only _valid_ states to be reached. Shifting back to our production code. this can be articulated as a "class invariant":http://en.wikipedia.org/wiki/Class_invariant.  "Barbara Liskov":http://en.wikipedia.org/wiki/Liskov presented the concept of a _Representation Invariant_  which defines the domain of the abstraction function. Again, we can use Javadoc to specify what a legal state should be in our class.
 
-<div style="max-width:900px">
+<div style="max-width:720px">
 <pre class="brush: java" >
 /** 
 * @Invariant  balance must be >= $0.00
@@ -122,6 +123,7 @@ public class Account  {
 </div>
 
 The new annotations @Invariant(...)@, @Requires(...)@, and @Ensures(...)@ allow us to implement DbC principals both in our code and test the contract in our associated unit tests. Theses annotations accept a "rich grammar":http://babelfish.arc.nasa.gov/trac/jpf/attachment/wiki/projects/jpf-aprop/contract/ContractSpec.g. If simple expressions aren't enough (and they never seem to be), JPF allows you to implement a class to perform the validation ( see @MyStrongPostCondition@ below and "http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-aprop/contract":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-aprop/contract) :
+
 
 <pre class="brush: java" >
 package blog;
