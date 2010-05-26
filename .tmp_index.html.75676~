@@ -3,6 +3,7 @@ layout: default
 title: goodcoder
 ---
 <div id="home">
+<<<<<<< HEAD
 
 <pre style="font-size:14px">
   {
@@ -25,7 +26,7 @@ title: goodcoder
    ]
  };
 
-
+=======
 	<table border="0">
 		<tr>
 			<td align="center" valign="top" style="padding-right:4em">
@@ -56,7 +57,7 @@ title: goodcoder
  ]
 };
 			
-
+>>>>>>> 7fd7acf0fb4227a460163086b914e4490c43ffda
 </pre>
 			</td>
 		</tr>
@@ -65,4 +66,8 @@ title: goodcoder
 
 
 </div>
-
+  
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 7fd7acf0fb4227a460163086b914e4490c43ffda
