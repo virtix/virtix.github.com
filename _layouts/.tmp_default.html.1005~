@@ -6,6 +6,8 @@
    <meta name="author" content="Bill Shelton" />
    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAAAAAAAD5Q7t/AAABx0lEQVQ4y42SPWhTYRiFn/feirUihZKqsRAJaFT8wyDN0KEdHBQVipNubgp2sbgKLbi5Cbo4iM51MVFanRzEv4g4RGhQQduaCrVEG2xJ7v2OQ5tAehvjGb9zvsN5D8dogR0922VmmBmlhXlrpYsQ8dhOAUirVN3EuQDwMIPSQqnxryPiaMZc/gGuWmVi6jXZZ2+4f3MEzEgMXGqfYPjEkB7eHkXmYb6BWyMU4pxIDo4w+2Om8c9bbzBx5xrlygo/yxUUOpCjWgv4/H0BzKN7W1eT3l9v8P7D9Ni+3s0sKca30hLnLo9x7HCaP8swU8gTTyaYfP52vGWCu7cugiAIAszgUfZG08FXLpxs0kcMercm8buriJDj/SniQSfyFlGtQmZogE37zzb1FikxKOZkgJMDDM8zhMAZGHSkzrTcRANhMadgOqtUYrcy6Yzcp8cKizn915BWRxSqVpzCNwcIYfh7T9d38u8Ei1/eSQolhQorc/r18Ynq+F1ejKSIlNi1Mrv2LF68KlAYvdfglr++pK2B79en4ZObfEr++tUG17NlwxqiKJXmtRGOHB1sfwLArr4+zMwOpIcxM9tz6BQH+8/TGUtHtH8B+PPMk6TyxcQAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
    
+<link type="text/css" rel="stylesheet" href="{{site.resources}}/resources/syntax_highlighter/styles/shCore.css"/>
+<link rel="stylesheet" href="{{ site.resources }}/resources/syntax_highlighter/styles/shThemeRDark.css" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="goodcoder feed" href="http://feeds.feedburner.com/goodcoder" />
 
 	
@@ -25,9 +27,6 @@
 	SyntaxHighlighter.config.clipboardSwf = '{{ site.resources }}/resources/syntax_highlighter/scripts/clipboard.swf';
 	SyntaxHighlighter.all();
 </script>
-
-<link type="text/css" rel="stylesheet" href="{{site.resources}}/resources/syntax_highlighter/styles/shCore.css"/>
-<link rel="stylesheet" href="{{ site.resources }}/resources/syntax_highlighter/styles/shThemeEclipse.css" type="text/css" />
 
 
 	<script src="http://www.google.com/jsapi?key=ABQIAAAA4Jd5s-5f4Vh2n-JPA_RGVhTCh4NniAK5cG_okncbQ3Tmh-o_vhQl8bGsNm8ylWeYcXWLj_g8HnB9wg" type="text/javascript"></script>
@@ -84,19 +83,7 @@
    <script>
    	$().ready(function(){
 	 
-	 //really only need to do this once
-	  //a=[{% for post in site.posts %}{'{{ post.title }}':'{{ post.url }}'},{% endfor %}];
-	 
-	 $('#homebadge').click(function(){
-	 	location.href='/';
-	 });
-	 
-	 //go home if user hits 'h'
-	 $('*').keyup( function(e) {
-	 	  if(e.which===72) location.href='/';
-	 });
-	 
-	 $('#me,#homer').tipsy({fade:true,gravity:'s'});
+	 $('#me').tipsy({fade:true,gravity:'s'});
       $('.tn100,.tn200,.tn300').colorbox( {
 			title: function(){ return '<a href="' + $(this).attr('src') + '">View Original</a>' },
 			href: function(){ return  $(this).attr('src')  },
@@ -116,12 +103,15 @@
 	});
 	
    </script>
-
-
 </head>
 
 <body>
-<div id="topline" />	
+	
+<div style="float:left;height:100%;position:relative;" class="avatar">
+  <img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="cursor:hand;" onclick="location.href='http://github.com/virtix'"><br/>
+  <a class="extra" href="/" style="color:gray;text-align:left;">home</a><br/><br/>
+  <a class="extra" href="#" style="color:gray;text-align:left;" id="disclaimer">disclaimer</a>
+</div>
 
 <div class="site">
  
@@ -132,16 +122,14 @@
 	<h4 style="color:#2d1c1c;">Disclaimer</h4>
 	<div style="color:#4d4d4d;;font-size:1.25em;text-align:justify;">
 	What's expressed here are my own opinions about various things technical and otherwise. It doesn't
-	express the opinion of my employer or any organization with which I am involved.  I do exercise my 
-	belief in the right to free speech and expression; as such, there might be language considered offensive
-	to some, and juvenille to others. <br /><br />
-	
-	More importantly, as much as I try, what's written here likely has errors and, at times, may make little sense to anyone other than the author. 
+	express the opinion of my employer or any organization with which I am involved. More importantly, as much as I try, 
+	what's written here likely has errors and, at times, may make little sense to anyone other than the author. Further,
+	I do exercise my belief in the right to free speech and expression. As such, there will be language considered offensive
+	to some.
 	<br /><br />
-	 Consuming, as well as producing, information is a moral activity.
-	 Feedback, corrections, complaints, and suggestions, are always welcome. 
+	 Feedback, corrections, complaints, and suggestions, are always welcome.
 	<br /><br />
-	-bs
+	-bill shelton
 	
     </div>
 	</div>

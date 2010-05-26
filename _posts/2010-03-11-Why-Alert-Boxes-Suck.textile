@@ -1,0 +1,76 @@
+---
+layout: post
+title: Why Alert Boxes Suck
+published: true
+draft: false
+draft_message:  _DRAFT - Subject to change_
+pub_date: March 11, 2010
+---
+
+<style>.example{float:right;width:300px;}</style>
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }}
+
+<script>
+ 
+ c = function(){
+   var mess = "Is this completely invasive or what?";
+   if( confirm(mess) ){
+     alert( "I'm making you click this for no reason.\n How considerate of me." );
+     return true;
+   }
+   else {
+     alert("Congratulations. You clicked 'Cancel'.\n BTW, I know you're not a moron.");
+     return false;
+   }
+   return -1;
+ }
+ 
+ $('#nanoo').bind('click', function() {
+  alert( 'This is an example of the annoying and \ntotally useless web element - the Alert.' );
+});
+
+ 
+</script>
+
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+
+
+!(example){{ site.images }}/no-alerts.png!
+Back in 1997, being able to create a modal dialog with one line of code was novel&mdash;and, I dare say, even useful at times. Naturally, wanting to show off to my employer and friends, I used these dialog boxes loosely.  It started out innocently enough.  Just a small Alert to let you know you're email address was not in the correct format. I soon found many uses for these brilliant UI widgets as well as Alert's evil sibling <a href="#" onclick="c();">Confirm</a>.
+
+I later became a card-carrying member of  the "Are-you-sure-you're-sure-club". Though membership has dwindled in recent years, many still practice their ancient doctrines.  This club of elite usability experts encourages the persistent doubting of users. As a matter of fact, it was critical as a member to _assume_ your users were complete and utter moronic ass-clowns who truly enjoyed being interrupted by these wonderful browser inventions. The classic example is that if a user clicked on a delete button, the club argued, they really didn't mean to do this&mdash;they _are_ retarded turd surfers, after all. So, to prevent the user from calling the help desk, who would simply refer the call to you, the developer, the heuristic is to have the software repeatedly prompt the user with audible and visual intrusions, asking them to click again and again. For _critical operations_ we would pop up a series of Confirms, asking the user if they are sure they meant to click that button. When they clicked 'OK', we popped up yet another Confirm with an even more emphatic "are-you-sure?" message (exclamation points and ALL CAPS!!! abounded). The relative criticality of the operation determined how many dialogs are presented as well as how many exclamation points and ALL CAPPED WORDS. In the end, when the user called to whine that _"the software"_ deleted his stuff, we then had the God-given right to treat the user like the true douche-tard he is. After all, we had warned him, what, like 3 or 4 times?
+ 
+ 
+ <p></p>
+
+
+h2. I was wrong ...
+
+It's not about whether users are smart or stupid. It's about ensuring that our software can be used by as many people as possible. What if many of the problems in software originate from inaccurate assumptions and poor usability designs? Maybe we've been wrong. Take a look most web applications today. Some are good&mdash;very good&mdash;check out "Kayak.com":http://www.kayak.com/. Others totally suck crusty doggy doo. Today, I'll simply just not use that software, unless I have no other choice, and won't bother trying to make it better. On the other hand, if I sense there was a sincere attempt to build it well, I'll help a sibling out and offer a comment. 
+
+Crappy usability gives software a bad name&mdash;this is not good. Many UIs suck because those in control of it's development _think_ they know the user, don't care, can't afford it, or simply don't know any better (which is no excuse). "Edward Tufte":http://www.edwardtufte.com/tufte/ warns about _knowing_  your users as an approach to usability. He states that's it's better to _respect_ them. Likely, users are smarter than the people who control how the software is built. They know what they need. Listen intently and you will hear.
+
+Lately when I work on UI stuff, I realize just how much effort goes into pulling off a decent design. I'm not  particularly good at it (obviously), but I can make something that doesn't totally suck. It's hard&mdash;_very_ hard. Good usability requires painstaking detail. It can be a tremendous amount of work to accomplish simple tasks that very few people, except the software aficianado, ever notice. Software front ends need to be as transparent as possible. That is, software should facilitate, not interrupt the user. Like a good book, you should quickly get absorbed and not realize you're interacting with a book or machine. It should flow and not be in the way.  Simplicity and elegance should be the goal.  The irony is that when it's done right, the users (or your client) may not notice it when it's working, but they notice it only when it breaks. It should _look_ pleasant, of course, but that's a very subjective heuristic and probably should be kept to a minimum. Looking good, obviously, is not the same as being usable.
+
+
+!{float:left}{{site.images}}/jj-jameson.png!
+The more I strive to _be invisible_ the better my software gets&mdash;at least _I_ think it's better. It's also a lot more work.  For example, one reason Confirms are used is simply because we're unwilling or unable to provide an _undo_ feature or history. If users could undo what they just did, go back in time, there would be no need to ask "are-you-sure?". Right? But that's hard. You have to save the state of the system at points in time. So ask yourself this question again, "Self, given a choice to spend a few days or more building an undo/history feature into my system or a few minutes building a series JavaScript dialogs followed by a hard delete, which path should I follow?".
+
+
+At times you need to gather additional information from the user and you want to make sure you get it before they do anything else&mdash;it may be needed for some state machine or some path (a legal agreement, for example). Regardless of why, it's a bad idea to hijack the browser to do it. The built-in Confirm also doesn't provide the ability to gather anything other than a simple decision from the user. It only allows the user to say 'Yes' or 'No'. It looks ugly, too. Even worse, the Alert  possesses no redeeming value today I can see. Maybe once upon a time, it was OK.
+
+h2. How  to make it better
+
+Today, there're numerous options. One can highlight the invalid field in some different color and display a *_non-intrusive and minimally-interrupting_* dialog describing what's up. I personally like the "Growl-like":http://growl.info/ dialogs that gracefully appear and disappear after some time interval. "jGrowl":http://stanlemon.net/projects/jgrowl.html works very nicely, imo&mdash; <a href="javascript:void(0);" onClick="growl();">simple jGrowl example</a>. GMail displays a yellow bar in the top center of  the page letting you know you just moved an item to the trash and provides an undo. I don't think you'll ever see an Alert or Confirm box in GMail or any other conscientious web application. Why? They suck. Don't use them.
+
+<script>
+$.jGrowl.defaults.position = 'bottom-right';
+function growl(){ $.jGrowl('<img src="http://i905.photobucket.com/albums/ac259/virtix/checkmark.png" width="45" align="absmiddle"><span  align="center" style="font-weight:800;font-size:1.25em" > Alert boxes suck.</span>' , { life:2400} );}
+</script>
+
+
+
+

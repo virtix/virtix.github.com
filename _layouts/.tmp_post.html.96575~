@@ -1,21 +1,13 @@
 ---
 layout: default
 ---
-<div id="homebadge"></div>
 
-<table border="0">
-	<tr>
-		<td valign="top">
-		</td>
-		<td valign="top">
-			<div id="post">
-			{{ content }}
-			<br/>
-			</div>
-		</td>
-	</tr>
-</table>
+<a id="homer" style="color:gray;" title="back to the list" href="/">home</a>
 
+<div id="post">
+{{ content }}
+<br/>
+</div>
 
 <br/>
 <p>&nbsp;</p>

@@ -1,0 +1,97 @@
+---
+layout: post
+title: An Approach to Software Style
+published: true
+draft: true
+draft_message:  _DRAFT - Subject to change_
+pub_date: February 10, 2010
+---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }} 
+
+p(meta). First Published: {{ page.pub_date }}  - {{site.location}}
+Last Compiled:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+ 
+
+h2. Definition of Software Style
+
+_Software Style_ can be defined as the manner in which we communicate our understanding of a problem into some computational solution; e.g., a web application, widget, or component. This definition is intentionally abstract, but is intended to broadly represents what we programmers do on a daily basis regardless of platform, OS, or programming language. Many of us straddle the fence of software engineering, oscillating from the expressive to the scientific. Writing software requires both analytics and creativity--which may not be that different. Analytics is at the heart of creativity.
+
+!>{{site.images}}/elements-of-style-600.jpg!:http://www.amazon.com/Elements-Style-50th-Anniversary/dp/0205632645/ref=sr_1_1?ie=UTF8&s=books&qid=1265904174&sr=1-1
+
+William Strunk and E.B. White published a brief and influential book titled "The Elements of Style":http://en.wikipedia.org/wiki/The_Elements_of_Style. It's been a well-deserved mainstay in American college writing courses and it's focus is on both grammar and efficient style. The last chapter, c. V, _An Approach To Style_, has some distinct parallels to writing software, too.    
+
+
+h2. _An Approach to Style_
+
+Following are adaptations of Strunk and White's last chapter on style as might be applied to writing software.  These are by no means _rules_, but are some guidelines that might be helpful. 
+(I plan to refine this and refer back periodically. Feedback is welcome.)
+
+h3. 1. Place yourself in the background
+
+Users don't really care who wrote the software, only who to contact if there's a problem. So, it's better to step aside, put your personality on the shelf and listen to what the software needs, not what _you_ need. 
+
+
+h3. 2. Code in a way that comes naturally
+
+You may hear the voices of various programmers in your head telling that you _should_ write software in a certain way; e.g., Functional, OO, TDD, etc.. They may be conflicting and cause some confusion. Listen for your voice and code in a _natural_ way. That's not to say never go beyond your comfort zone, to reach, and learn something new, but rather, be true to your skill set and your software will be better for it.
+
+
+h3. 3. Work from a suitable design 
+
+Plan some before writing code. If you're writing a large complex system you'll likely need more planning and design, but for many smaller components, tools, and web apps, your design may be smaller. The point is to do it; to _reason_ about what you're writing and why. This should be a continuous practice. That is, you reason (design) about what you intend to do, what you are doing and why, and what you did. The design and your code will be constantly evolving.
+
+
+h3. 4. Write with nouns and verbs
+
+This can be viewed as modeling real-world stuff in your code. In other words, this is an Object Oriented approach. Example, name classes the things you're modeling and use _common_ language. When executing operations on objects, use actions that mean something to the domain: @dog.bark( "ruff", "loud" )@ , or @account.add( accountID )@.  
+
+
+h3. 5. Revise and refactor
+
+There's always room for improvement. There may not be time; however, given the opportunity, there's a great feeling associated with cleaning up older code and make it better. There's no such thing as _done_ in software.
+
+
+h3. 6. Do not overwrite
+
+Keep your code as simple as possible, focusing on your own understanding of the problem you're attempting to solve. If a piece of code is trying to solve more than one problem, it might be a smell and possibly should be refactored to a different component. 
+
+
+h3. 7. Do not overstate
+
+
+
+h3. 8. Avoid the use of qualifiers
+
+h3. 9. Do not affect a breezy manner
+
+h3. 10. Use orthodox spelling
+
+h3. 11. Do not explain too much
+
+h3. 12. Do not construct awkward adverbs
+
+h3. 13. Do not explain too much
+
+h3. 14. Make sure the reader knows who is speaking
+
+h3. 15. Avoid fancy words
+
+h3. 16. Do not use dialect unless your hearing is good
+
+h3. 17. Be clear
+
+h3. 18. Do not inject your opinion
+
+h3. 19. Use figures of speech sparingly
+
+h3. 20. Do not take shortcuts at the cost of clarity
+
+h3. 21. Avoid foreign languages
+
+h3. 22. Prefer the standard to the off-beat
+
+
+

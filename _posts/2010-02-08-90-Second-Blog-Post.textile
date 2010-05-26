@@ -1,0 +1,26 @@
+---
+layout: post
+title: A Blog Post in 90 second
+published: false
+---
+
+h1. {{ page.title }}
+
+p(meta). 9 February, 2010 - Alexandria, VA
+
+h1. Write something
+
+foobar ...
+
+<pre class="brush:  ruby">
+ require "test/unit"
+class TestSomething < Test::Unit::TestCase
+  
+  def test_this
+    assert true
+  end
+  
+end
+</pre>
+
+!/images/ss1.png!

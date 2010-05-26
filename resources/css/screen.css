@@ -4,10 +4,44 @@
 /*
 /*****************************************************************************/
 
+#topline {
+	position:absolute;  
+	top:1; 
+	height: 14px; 
+	width:100%; 
+	background-image:url('/images/stripe.png');
+  background-repeat:repeat-x;
+	}
+
+#homebadge { 
+  position: absolute; 
+  top: 120px; 
+	left:0px; 
+	background-color:#f6a95c;
+	width:50px; 
+	height:100px; 
+	margin-top:10px;
+	text-align:center;
+  -moz-border-radius-topright:    1em;
+  -moz-border-radius-bottomright: 1em;
+  -webkit-border-top-right-radius: 1em;
+  -webkit-border-bottom-right-radius: 1em;
+	border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+	cursor:pointer;
+	background-image:url('/images/home.png');
+  background-repeat:no-repeat;
+}
+
+.draft {
+	color:darkred;
+}
+
+
 /* Global Reset */
 
 img{
-	padding:2em;
+	padding:1.5em;
 	border-style:none;
 }
 
@@ -43,11 +77,13 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h2, h3, h4, h5, h6 {
   font-size: 100%;
 }
 
 h1 {
+  font-size:large;
+  color:#50515c;
   margin-bottom: 1em;
 }
 
@@ -91,9 +127,10 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 72em;
-  margin: 3em auto 2em auto;
+  min-width:54em;
+  margin: 3em 5em 2em 5em;
   line-height: 1.5em;
+	text-align:justify;
 }
 
 .title {
@@ -159,7 +196,7 @@ ul.posts {
 /*****************************************************************************/
 
 #post {
-
+ margin-left:6em;
 }
 
   /* standard */
@@ -175,13 +212,20 @@ ul.posts {
     margin-left: 1.25em;
   }
 
+
+/*
+ *   not needed and conflicts with pygments and syntax higghlighter 
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+	  padding: 2em;
+	  color: #979B96;
+    background-color: #1B2426 !important;
     font-size: 95%;
     padding: 0 .2em;
   }
 
+ * 
+ * */
     #post pre code {
       border: none;
     }
