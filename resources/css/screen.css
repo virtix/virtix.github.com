@@ -24,6 +24,10 @@
 	text-align:center;
   -moz-border-radius-topright:    1em;
   -moz-border-radius-bottomright: 1em;
+  -webkit-border-top-right-radius: 1em;
+  -webkit-border-bottom-right-radius: 1em;
+	border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 	cursor:pointer;
 	background-image:url('/images/home.png');
   background-repeat:no-repeat;
@@ -124,7 +128,7 @@ ul.posts {
   font-size: 110%;
   text-align: justify;
   min-width:54em;
-  margin: 3em 2em 2em 5em;
+  margin: 3em 5em 2em 5em;
   line-height: 1.5em;
 	text-align:justify;
 }
