@@ -298,19 +298,11 @@ loaded code:        classes=86, methods=1198
 
 h1. Summary 
 
-JPF Annotation Properties for Specification offers a declarative way to specify pre and post conditions and class invariants through an expressive grammar for annotations.
-Additionally, the JPF listeners allow for the automatic verification of the contract specification during program execution. Performing verification as JUnit 
-tests requires unit tests to extend @gov.nasa.jpf.util.test.TestJPF@, initialize JPF in a main method, and use a JPF
-verifier method.
+JPF Annotation Properties for Specification offers a declarative way to specify pre and post conditions and class invariants through an expressive grammar for annotations. Additionally, the JPF listeners allow for the automatic verification of the contract specification during program execution. Performing verification as JUnit tests requires unit tests to extend @gov.nasa.jpf.util.test.TestJPF@, initialize JPF in a main method, and use a JPF verifier method.
 
-Being able to specify the contract _and_ automatically test can be very useful, especially with respect to class invariants, where encapsulation frequently prevents such direct inspection. 
-It would be nice to have a tighter more transparent integration with JUnit or TestNG and Eclipse. 
-Perhaps, a set of static contract-based assertions and custom test runners would be useful. It's my understanding that JPF runs in a separate JVM than the system under test. 
-This may complicate implementation matters (if this is, in fact, true). With that said, the work the JPF folks have done is truly impressive with
-respect to jpf-aprop as well as the other JPF projects.
+Being able to specify the contract _and_ automatically test can be very useful, especially with respect to class invariants, where encapsulation frequently prevents such direct inspection. It would be nice to have a tighter more transparent integration with JUnit or TestNG and Eclipse. Perhaps, a set of static contract-based assertions and custom test runners would be useful. It's my understanding that JPF runs in a separate JVM than the system under test.  This may complicate implementation matters (if this is, in fact, true). With that said, the work the JPF folks have done is truly impressive with respect to jpf-aprop as well as the other JPF projects.
 
-   
 
-(Coincidentally, both Bertrand and Tony are giving keynotes at "TAIC PART":http://www2010.taicpart.org/index.html in September 2010). 
+(Coincidentally, both Bertrand and Tony are giving keynotes at "TAIC PART":http://www2010.taicpart.org/index.html in September 2010 and JPF is a "GSOC 2010":http://code.google.com/soc/ sponsor). 
 
 
