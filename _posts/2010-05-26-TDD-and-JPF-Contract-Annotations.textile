@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exploring Testing with Java Path Finder Contract Annotations
+title: Exploring Testing with Java Pathfinder Contract Annotations
 published: true
 draft: true
 draft_message: 
@@ -91,11 +91,11 @@ This is a specification written more or less in a natural language and it leaves
 What we would like is (1) a way to specify the class invariant,  (2) specify the pre and post conditions for each method, and (3) be able to automatically test our contract.  
 <br/>
 
-h1. Java Path Finder ("http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart":http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart)
+h1. Java Pathfinder ("http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart":http://babelfish.arc.nasa.gov/trac/jpf/wiki/WikiStart)
 
 !>{{site.images}}/saturn5_apollo11.gif!
 
-Interestingly, NASA has a number of "open source":http://opensource.arc.nasa.gov/ software projects. In particular, the Ames Research Lab sponsors both research and production-ready projects. Java Path Finder (JFP) (Though not listed on NASA's open source page) is one such tool.  It started out as a model checker, but has evolved into much more. Essentially, there's a "_jpf-core_":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-core and a number of sub-projects, or _plugins_.  The package of interest here is the "jpf-aprop":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-aprop, or JPF Annotation Properties for specifications.  As the project name suggests, this is a collection of annotations that support (DbC) specifications and testing.  Automatic unit testing is performed via JUnit and JPF listeners. We'll cover this shortly. 
+Interestingly, NASA has a number of "open source":http://opensource.arc.nasa.gov/ software projects. In particular, the Ames Research Lab sponsors both research and production-ready projects. Java Pathfinder (JFP) (Though not listed on NASA's open source page) is one such tool.  It started out as a model checker, but has evolved into much more. Essentially, there's a "_jpf-core_":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-core and a number of sub-projects, or _plugins_.  The package of interest here is the "jpf-aprop":http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-aprop, or JPF Annotation Properties for specifications.  As the project name suggests, this is a collection of annotations that support (DbC) specifications and testing.  Automatic unit testing is performed via JUnit and JPF listeners. We'll cover this shortly. 
 
 The core aspects of our tests remain, but our implementation changes. For the @Account@ class, it now looks like this:
 
