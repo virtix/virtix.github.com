@@ -31,7 +31,7 @@ One key point with DbC is that satisfying the precondition is the responsibility
 
 In Java we can use Javadoc to specify the contract:
 
-<div style="max-width:900px">
+<div style="max-width:720px">
 <pre class="brush: java" >
 public class Account  {
  double balance;
