@@ -99,7 +99,7 @@ Interestingly, NASA has a number of "open source":http://opensource.arc.nasa.gov
 The core aspects of our tests remain, but our implementation changes. For the @Account@ class, it now looks like this:
 
 
-<div style="max-width:900px">
+<div style="max-width:720px">
 <pre class="brush: java" >
 import gov.nasa.jpf.annotation.Invariant;
 import gov.nasa.jpf.annotation.Ensures;
