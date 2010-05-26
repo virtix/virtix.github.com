@@ -1,6 +1,6 @@
 ---
 layout: default
-title: digital pencil shavings
+title: goodcoder
 ---
 <div id="home">
 <table border="0">
@@ -14,7 +14,7 @@ title: digital pencil shavings
 		<td valign="top">
 <pre id="homenav" style="margin:0;font-size:14px;">
 {
- 'professions' : ['programmer', 'student', 'tinkerer', 'do gooder'],
+ 'professions' : ['programmer', 'student', 'do gooder'],
  'real_name' : 'bill shelton',
  'posts' : 
 [
