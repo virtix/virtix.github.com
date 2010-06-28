@@ -22,4 +22,6 @@ how to manage the past and the future, you'll miss out on the greatest opportuni
 Love,
 Self
 
-!(tn320){float:right}{{site.images}}/0002zA-7322.jpg!:http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0002zA
+<div align="center">
+!(tn320){{site.images}}/0002zA-7322.jpg!:http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0002zA
+</div>
