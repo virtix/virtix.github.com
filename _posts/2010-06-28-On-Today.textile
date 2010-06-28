@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Thought on Today
+title: Note to Self: tomorrow is a thing of the past
 published: true
 draft: false
 pub_date: June 28, 2010
