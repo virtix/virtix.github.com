@@ -1,0 +1,29 @@
+---
+layout: post
+title: Thought on Today
+published: true
+draft: false
+pub_date: June 28, 2010
+---
+
+{% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
+
+h1. {{ page.title }}
+
+
+p(meta). {{ page.pub_date }}  - {{site.location}}
+Last Modified:  {{ site.time | date:  "%A, %B %d, %Y - %I:%M %p %Z" }}
+
+h2. Note to Self
+
+
+
+Dear Self,
+
+Tomorrow is soon to be a thing of the past. Yesterday's actions will resonate into the future. Yet, if you ponder in the present moment 
+how to manage the past and the future, you'll miss out on the greatest opportunities in life. After all, life _is_ short and our time here is finite. Go and play. 
+
+Love,
+Self
+
+!(tn320){float:right}{{site.images}}/0002zA-7322.jpg!:http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0002zA
