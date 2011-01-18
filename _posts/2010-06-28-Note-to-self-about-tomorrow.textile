@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note to Self&mdash;Tomorrow is a thing of the past
+title: Note to Self&#151;Tomorrow is a thing of the past
 published: true
 draft: false
 pub_date: June 28, 2010

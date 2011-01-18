@@ -9,7 +9,7 @@
 	top:1; 
 	height: 14px; 
 	width:100%; 
-	background-image:url('/images/stripe.png');
+	/*background-image:url('/images/stripe.png');*/
   background-repeat:repeat-x;
 	}
 
@@ -17,7 +17,7 @@
   position: absolute; 
   top: 120px; 
 	left:0px; 
-	background-color:#f6a95c;
+	background-color:#eaeaea;
 	width:50px; 
 	height:100px; 
 	margin-top:10px;
