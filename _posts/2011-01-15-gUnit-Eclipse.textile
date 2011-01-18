@@ -34,7 +34,7 @@ At some point, I'll try to write more about this journey, but for now I'll just 
 
 h3. Basic steps
 
-# "Download ANTLR":http://www.antlr.org/download.html and "Eclipse":http://www.eclipse.org/downloads/
+# "Download ANTLR 3.3.1":http://www.antlr.org/depot/antlr3/main/target and "Eclipse":http://www.eclipse.org/downloads/
 # Install "ANTLR IDE":http://antlrv3ide.sourceforge.net/ (Eclipse Plugin) and all dependencies (GEF/Zest, and DLTK). 
 # Create an ANTLR project in Eclipse (ANTLR IDE has some good info about how to bang this out under "Documentation")
 # Create an Eclipse run configuration *That's what we're doing here.*
@@ -54,7 +54,7 @@ Lastly, add a couple Eclipse variables to the arguments section so that when you
 !/images/gunit-arguments.png! 
 
 
-I have a simple grammar, @SQLToDNF.g@, which I'll share as it matures. My tests are rudimentary, but a _baby step_ in the right direction. Note the tes "test suites" below correlate to the elements within the grammar and each individual test is a String that is processed by the generated parser. Here I use only @OK@ and @FAIL@ assertions, though there are a few others.
+I have a simple grammar, @SQLToDNF.g@, which I'll share as it matures. My tests are rudimentary, but a _baby step_ in the right direction. Note the test cases in the "test suite" below correlate by name to the elements within the grammar and each individual test is a String that is processed by the generated parser. Here I use only @OK@ and @FAIL@ assertions, though there are a few others.  A nice gUnit feature is the ability to have a strin span multiple lines simply by wrapping it in << _the string_ >>. 
 
 <div style="max-width:720px">
 <pre class="brush: java">
@@ -119,6 +119,7 @@ select_statement [My Custom label would go here] :
 
 </pre>
 </div>
+* I would also like the ability to run specific tests rather than the entire test suite.
 
 <p></p>
 
