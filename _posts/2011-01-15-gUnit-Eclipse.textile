@@ -2,9 +2,10 @@
 layout: post
 title: Running gUnit in ANTLR IDE for Eclipse
 published: true
-draft: true
+draft: false
 draft_message:  _DRAFT - Subject to change_
 pub_date: January 15, 2011
+updated_date: January 19, 2011
 ---
 
 {% if page.draft %} %(draft){{ page.draft_message  }}%  {%endif%}
@@ -13,6 +14,7 @@ h1. {{ page.title }}
 
 
 p(meta). {{ page.pub_date }}  - {{site.location}}
+Updated: {{ page.updated_date }}
 
 
 h2. Background
@@ -34,7 +36,7 @@ At some point, I'll try to write more about this journey, but for now I'll just 
 
 h3. Basic steps
 
-# "Download ANTLR 3.3.1":http://www.antlr.org/depot/antlr3/main/target and "Eclipse":http://www.eclipse.org/downloads/
+# "Download ANTLR 3.3.1":http://www.antlr.org/depot/antlr3/main/target (note and "Eclipse":http://www.eclipse.org/downloads/
 # Install "ANTLR IDE":http://antlrv3ide.sourceforge.net/ (Eclipse Plugin) and all dependencies (GEF/Zest, and DLTK). 
 # Create an ANTLR project in Eclipse (ANTLR IDE has some good info about how to bang this out under "Documentation")
 # Create an Eclipse run configuration *That's what we're doing here.*
@@ -105,25 +107,30 @@ Obviously I'm just starting out with language apps and it's unfamiliar territory
 I still have some questions and comments, though:
 
 * How can I debug and test my grammar at the same time?
-* How can I best create and run test suites with hundreds of tests? Do I just generate jUnit tests from the gUnit grammar, or is there a better way?
-* The output is minimal. An optional stacktrace would be nice. It would also be nice to be able to label tests and, like jUnit, offer some hints as to why a test failed. Perhaps something like:
+* How can I best create groups of tests and run suites with many tests? Do I just generate jUnit tests from the gUnit grammar, or is there a better way?
+* Richer output would be useful. An optional stacktrace would also be nice. (I'll look at the src and see if I can tweak it). (_Perhaps, an eclipse plugin, wired into jUnit?_)
+* It would also be nice to be able to annotate suites and tests: 
 
 <div style="max-width:720px">
 <pre class="brush: java">
 gunit SQLToDNF;
 
 //simple rule test
-select_statement [My Custom label would go here] : 
-  "SELECT * FROM foo" OK [Comment: Basic statement should pass no matter what!]
+@label "My Custom label ..."
+select_statement : 
+  @label "Basic Select Test"
+  "SELECT * FROM foo" OK
+  @label "Not-so-Basic Select Test"
+  "SELECT this FROM that or the other" FAIL 
 ;
 
 </pre>
 </div>
-* I would also like the ability to run specific tests rather than the entire test suite.
+* I would also like the ability to target and run specific tests rather than the entire test suite. Again, if it were posible to wire gUnit into jUnit within Eclipse, this would be a winner.
 
-<p></p>
+<p>&nbsp;</p>
 
-To Do: I've seen some other grammars where the authors have used jUnit on the generated parsers. This may address some of the questions I have from above. I like the terse expressions of gUnit and the syntax aligns with the grammar itself, all of which is encouraging. 
+*To Do*: I've seen some other grammars where the authors have used jUnit on the generated parsers. This may address some of the questions I have from above. I like the terse expressions of gUnit and the syntax aligns with the grammar itself, all of which is encouraging. 
 
 
 
