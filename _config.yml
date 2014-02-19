@@ -1,12 +1,3 @@
-destination:     ./_site
-auto:            true
-lsi:             false
-server_port:     4000
-pygments:        true
-markdown:        rdiscount
-permalink:       date
-images:          http://i905.photobucket.com/albums/ac259/virtix
-resources:       http://mxunit.s3.amazonaws.com
-lumpia:          http://lumpia.s3.amazonaws.com
-_resources:
-location:    Alexandria, VA
+name: what if?
+markdown: kramdown
+pygments: true

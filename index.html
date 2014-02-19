@@ -1,70 +1,45 @@
----
-layout: default
-title: what if
----
 
-<div id="home">
-<table border="0">
-	<tr>
-		<td align="center" valign="top" style="padding-right:4em">
-				<div style="float:left;height:100%;" class="avatar">
-				  <!-- img id="me" border="0" src="/images/billy_south_pk_avatar.png" title="Contact me through Github." style="cursor:hand;" onclick="location.href='http://github.com/virtix'" --><br/>
-				</div>
-			</td>
-		<td valign="top">
-<pre id="homenav" style="margin:0;font-size:14px;">
-{
- 'professions' : ['programmer', 'phd student', 'tinkerer', 'do gooder'],
- 'interests' : [ 'software engineering', 'software testing', 'computer language recognition' ],
- 'real_name' : 'bill shelton',
- 'posts' : 
-[
-	{% for post in site.posts %}{'title' : '<a href="{{ post.url }}">{{ post.title }}</a>', 'date' : '{{ post.date | date_to_string }}',
-	{% endfor %}
-],
- 'home' : {
-   'city' : 'alexandria'
-   'state' : 'va'
-   'country' : 'us'
-    },
- 'projects' : [
-	
-	<a href="http://mxunit.org">mxunit</a> &#151; unit test framework for coldfusion,
-	<a href="https://github.com/virtix/mut4j">mut4j</a> &#151; Incubating a Java-based research mutation testing tool.
-	<!--
-	<a href="http://github.com/virtix/cfmongodb">cfmongodb</a> &#151; mongodb object mapper
-	 <a href="http://goodcoders.org">goodcoders.org</a> &#151; a dream of changing the world, one line of code at a time -->
- ],
- 
-  'misc' : [
-	   git-htmldocs:{ 
-	   		['<a href="{{site.lumpia}}/git-htmldocs/git.html">git HTML docs</a>'],
-	   		['<a href="{{site.lumpia}}/git-htmldocs/gitcore-tutorial.html">git-core tutorial</a>'], 
-	   		['<a href="{{site.lumpia}}/git-htmldocs/everyday.html">Everyday GIT With 20 Commands Or So</a>'], 
-	   },
-	 '<a class="extra" href="http://www.linkedin.com/profile/view?id=33040165&trk=tab_pro">linkedin</a>',
-	 '<a href="https://docs.google.com/Doc?docid=0AWBIxhytrIM5ZDRuY2tkN184M2d0bTg4dGhj&hl=en">resume</a>',
-	 '<a href="#" id="skills">technologies</a>',
-	 articles : [
-	   '<a href="http://www.adobe.com/devnet/coldfusion/articles/testdriven_coldfusion_pt1.html">Test Driven Development with ColdFusion - Part 1</a>', 
-	   '<a href="http://www.adobe.com/devnet/coldfusion/articles/testdriven_coldfusion_pt2.html">Test Driven Development with ColdFusion - Part 2</a>' 
-	  ],	
-	 '<a class="extra" href="http://twitter.com/#!/virtix">twitter</a>',
-	 '<a class="extra" href="https://github.com/virtix">github projects and doodles</a>',
-	 '<a class="extra" href="#" id="jump">stick_figure</a>',
-	 '<a class="extra" href="http://virtix.stripgenerator.com/gallery/">soft suckers</a>'
-	 '<a class="extra" href="#" id="disclaimer">disclaimer</a>'
-  ]
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>What if?</title>
+   
+   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+   
+    <style>
+    @import url(http://fonts.googleapis.com/css?family=Over+the+Rainbow);
 
-};
-			
+    .canvas {
+        background-color: #f9f9f9;
+        width: 100%;
+        height: auto;
+        bottom: 0px;
+        top: 0px;
+        left: 0;
+        position: absolute;
+    }
+    .center {
+        font-family: 'Over the Rainbow', cursive;
+        font-size: 12em;
+        position: fixed;
+        border: 0px ridge gray;
+        top: 50%;
+        left: 50%;
+        margin-top: -200px;
+        margin-left: -400px;
+    }	
 
-</pre>
-			</td>
-		</tr>
-		
-	</table>
+    </style>
 
+<body>
 
-</div>
+  <div class="canvas">
+    <div class="center">
+      What if?
+  </div>
+  </div>
 
+</body>
+</html>

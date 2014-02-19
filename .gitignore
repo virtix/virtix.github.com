@@ -1,4 +1,3 @@
-_drafts/
-_site/
-.setting/
-_posts/.tmp_*
+_site
+*.swp
+
